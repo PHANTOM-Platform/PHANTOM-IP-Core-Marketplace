@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="simons_idwt" xd:componentRef="simons_idwt" xd:initiationInterval="1048631" xd:clockPeriod="5.000000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CONTROL_BUS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="inStream0.data" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="inStream0.keep" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream0.strb" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream0.user" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream0.last" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream0.id" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream0.dest" xd:originalName="inStream0" xd:direction="in" xd:interfaceRef="inStream0" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream1.data" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="inStream1.keep" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream1.strb" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream1.user" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream1.last" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream1.id" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream1.dest" xd:originalName="inStream1" xd:direction="in" xd:interfaceRef="inStream1" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream2.data" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="inStream2.keep" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream2.strb" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream2.user" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream2.last" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream2.id" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream2.dest" xd:originalName="inStream2" xd:direction="in" xd:interfaceRef="inStream2" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream3.data" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="inStream3.keep" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream3.strb" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="inStream3.user" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream3.last" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream3.id" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="inStream3.dest" xd:originalName="inStream3" xd:direction="in" xd:interfaceRef="inStream3" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="outStream.data" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="32"/>
+  <xd:arg xd:name="outStream.keep" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="outStream.strb" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="4"/>
+  <xd:arg xd:name="outStream.user" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="outStream.last" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="outStream.id" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:arg xd:name="outStream.dest" xd:originalName="outStream" xd:direction="out" xd:interfaceRef="outStream" xd:busTypeRef="axis" xd:dataWidth="1"/>
+  <xd:latencyEstimates xd:best-case="1048630" xd:worst-case="1048630" xd:average-case="1048630"/>
+  <xd:resourceEstimates xd:LUT="17205" xd:FF="12948" xd:BRAM="4" xd:DSP="96"/>
+</xd:acceleratorMap>
