@@ -8613,7 +8613,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>latency</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="65">1115012</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.latency" spirit:order="65">1115001</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
@@ -8630,8 +8630,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Idwt</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>1811151625</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2018-11-15T16:26:04Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1811161817</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2018-11-16T18:18:12Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2016.4</xilinx:xilinxVersion>

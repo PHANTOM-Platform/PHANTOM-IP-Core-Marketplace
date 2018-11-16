@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="idwt,hls_ip_2016_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045ffg900-2,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.078600,HLS_SYN_LAT=1115012,HLS_SYN_TPT=none,HLS_SYN_MEM=522,HLS_SYN_DSP=14,HLS_SYN_FF=6449,HLS_SYN_LUT=6598}" *)
+(* CORE_GENERATION_INFO="idwt,hls_ip_2016_4,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=1,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z045ffg900-2,HLS_INPUT_CLOCK=5.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.078600,HLS_SYN_LAT=1115001,HLS_SYN_TPT=none,HLS_SYN_MEM=522,HLS_SYN_DSP=14,HLS_SYN_FF=6078,HLS_SYN_LUT=6665}" *)
 
 module idwt (
         ap_clk,
@@ -287,21 +287,21 @@ parameter    ap_ST_fsm_pp4_stage9 = 31'b100000000000000000000000000;
 parameter    ap_ST_fsm_pp4_stage10 = 31'b1000000000000000000000000000;
 parameter    ap_ST_fsm_pp4_stage11 = 31'b10000000000000000000000000000;
 parameter    ap_ST_fsm_pp4_stage12 = 31'b100000000000000000000000000000;
-parameter    ap_ST_fsm_state98 = 31'b1000000000000000000000000000000;
+parameter    ap_ST_fsm_state87 = 31'b1000000000000000000000000000000;
 parameter    ap_const_lv32_0 = 32'b00000000000000000000000000000000;
 parameter    ap_const_lv32_1 = 32'b1;
 parameter    ap_const_lv32_9 = 32'b1001;
 parameter    ap_const_lv32_B = 32'b1011;
 parameter    ap_const_lv32_D = 32'b1101;
 parameter    ap_const_lv32_F = 32'b1111;
-parameter    ap_const_lv32_12 = 32'b10010;
-parameter    ap_const_lv32_13 = 32'b10011;
-parameter    ap_const_lv32_18 = 32'b11000;
-parameter    ap_const_lv32_17 = 32'b10111;
-parameter    ap_const_lv32_1D = 32'b11101;
-parameter    ap_const_lv32_1C = 32'b11100;
+parameter    ap_const_lv32_14 = 32'b10100;
 parameter    ap_const_lv32_15 = 32'b10101;
+parameter    ap_const_lv32_1A = 32'b11010;
+parameter    ap_const_lv32_19 = 32'b11001;
+parameter    ap_const_lv32_12 = 32'b10010;
 parameter    ap_const_lv32_11 = 32'b10001;
+parameter    ap_const_lv32_17 = 32'b10111;
+parameter    ap_const_lv32_13 = 32'b10011;
 parameter    C_S_AXI_CONTROL_BUS_DATA_WIDTH = 32;
 parameter    ap_const_int64_8 = 8;
 parameter    C_S_AXI_CONTROL_BUS_ADDR_WIDTH = 6;
@@ -362,13 +362,12 @@ parameter    C_M_AXI_IMAGE_OUT_BUSER_WIDTH = 1;
 parameter    C_M_AXI_IMAGE_OUT_USER_VALUE = 0;
 parameter    C_M_AXI_IMAGE_OUT_PROT_VALUE = 0;
 parameter    C_M_AXI_IMAGE_OUT_CACHE_VALUE = 3;
+parameter    ap_const_lv32_16 = 32'b10110;
 parameter    ap_const_lv32_7 = 32'b111;
 parameter    ap_const_lv32_8 = 32'b1000;
-parameter    ap_const_lv32_14 = 32'b10100;
-parameter    ap_const_lv32_16 = 32'b10110;
+parameter    ap_const_lv32_1D = 32'b11101;
 parameter    ap_const_lv32_1B = 32'b11011;
-parameter    ap_const_lv32_19 = 32'b11001;
-parameter    ap_const_lv32_1A = 32'b11010;
+parameter    ap_const_lv32_18 = 32'b11000;
 parameter    ap_const_lv32_A = 32'b1010;
 parameter    ap_const_lv32_C = 32'b1100;
 parameter    ap_const_lv32_E = 32'b1110;
@@ -383,8 +382,9 @@ parameter    ap_const_lv3_0 = 3'b000;
 parameter    ap_const_lv2_0 = 2'b00;
 parameter    ap_const_lv4_0 = 4'b0000;
 parameter    ap_const_lv4_F = 4'b1111;
-parameter    ap_const_lv64_4000000000000000 = 64'b100000000000000000000000000000000000000000000000000000000000000;
+parameter    ap_const_lv32_1C = 32'b11100;
 parameter    ap_const_lv64_3FE0000000000000 = 64'b11111111100000000000000000000000000000000000000000000000000000;
+parameter    ap_const_lv64_3FD0000000000000 = 64'b11111111010000000000000000000000000000000000000000000000000000;
 parameter    ap_const_lv32_2 = 32'b10;
 parameter    ap_const_lv32_1F = 32'b11111;
 parameter    ap_const_lv7_40 = 7'b1000000;
@@ -675,38 +675,38 @@ wire   [0:0] ap_CS_fsm_state2;
 reg    IMAGE_IN0_blk_n_R;
 wire   [0:0] ap_CS_fsm_pp0_stage0;
 reg    ap_enable_reg_pp0_iter1;
-reg   [0:0] exitcond_reg_1101;
+reg   [0:0] exitcond_reg_1102;
 reg    IMAGE_IN1_blk_n_AR;
 reg    IMAGE_IN1_blk_n_R;
 wire   [0:0] ap_CS_fsm_pp1_stage0;
 reg    ap_enable_reg_pp1_iter1;
-reg   [0:0] exitcond1_reg_1125;
+reg   [0:0] exitcond1_reg_1126;
 reg    IMAGE_IN2_blk_n_AR;
 reg    IMAGE_IN2_blk_n_R;
 wire   [0:0] ap_CS_fsm_pp2_stage0;
 reg    ap_enable_reg_pp2_iter1;
-reg   [0:0] exitcond2_reg_1149;
+reg   [0:0] exitcond2_reg_1150;
 reg    IMAGE_IN3_blk_n_AR;
 reg    IMAGE_IN3_blk_n_R;
 wire   [0:0] ap_CS_fsm_pp3_stage0;
 reg    ap_enable_reg_pp3_iter1;
-reg   [0:0] exitcond3_reg_1173;
+reg   [0:0] exitcond3_reg_1174;
 reg    IMAGE_OUT_blk_n_AW;
+wire   [0:0] ap_CS_fsm_pp4_stage3;
+reg    ap_enable_reg_pp4_iter3;
+reg   [0:0] exitcond_flatten_reg_1198;
+reg   [0:0] ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198;
+reg    IMAGE_OUT_blk_n_W;
+wire   [0:0] ap_CS_fsm_pp4_stage4;
+reg    IMAGE_OUT_blk_n_B;
+wire   [0:0] ap_CS_fsm_pp4_stage9;
+wire   [0:0] ap_CS_fsm_pp4_stage8;
 wire   [0:0] ap_CS_fsm_pp4_stage1;
 reg    ap_enable_reg_pp4_iter4;
-reg   [0:0] exitcond_flatten_reg_1197;
-reg   [0:0] ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197;
-reg    IMAGE_OUT_blk_n_W;
-wire   [0:0] ap_CS_fsm_pp4_stage2;
-reg    IMAGE_OUT_blk_n_B;
-wire   [0:0] ap_CS_fsm_pp4_stage7;
-wire   [0:0] ap_CS_fsm_pp4_stage6;
-wire   [0:0] ap_CS_fsm_pp4_stage12;
-wire   [0:0] ap_CS_fsm_pp4_stage11;
-wire   [0:0] ap_CS_fsm_pp4_stage4;
-reg    ap_enable_reg_pp4_iter5;
-reg   [0:0] ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197;
+reg   [0:0] ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198;
 wire   [0:0] ap_CS_fsm_pp4_stage0;
+wire   [0:0] ap_CS_fsm_pp4_stage6;
+wire   [0:0] ap_CS_fsm_pp4_stage2;
 wire    IMAGE_IN0_AWREADY;
 wire    IMAGE_IN0_WREADY;
 reg    IMAGE_IN0_ARVALID;
@@ -796,149 +796,140 @@ reg   [10:0] indvar3_reg_425;
 reg   [16:0] indvar_flatten_reg_436;
 reg   [7:0] rows1_reg_447;
 reg   [11:0] cols_reg_458;
-wire   [63:0] grp_fu_479_p2;
+wire   [63:0] grp_fu_475_p2;
 reg   [63:0] reg_485;
-reg    ap_enable_reg_pp4_iter1;
-reg    ap_sig_ioackin_IMAGE_OUT_AWREADY;
+wire   [0:0] ap_CS_fsm_pp4_stage5;
+reg    ap_enable_reg_pp4_iter2;
+reg   [0:0] ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198;
 reg    ap_sig_ioackin_IMAGE_OUT_WREADY;
-reg   [0:0] ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197;
-reg    ap_enable_reg_pp4_iter3;
-reg   [0:0] ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197;
+reg    ap_sig_ioackin_IMAGE_OUT_AWREADY;
+reg   [63:0] reg_491;
 wire   [31:0] grp_fu_469_p1;
-reg   [31:0] reg_491;
-reg   [63:0] reg_496;
-reg   [29:0] tmp_2_reg_1027;
-reg   [29:0] imageIn_reg_1032;
-reg   [29:0] imageIn4_reg_1037;
-reg   [29:0] imageIn5_reg_1042;
-reg   [29:0] imageIn6_reg_1047;
+reg   [31:0] reg_497;
+reg   [29:0] tmp_2_reg_1028;
+reg   [29:0] imageIn_reg_1033;
+reg   [29:0] imageIn4_reg_1038;
+reg   [29:0] imageIn5_reg_1043;
+reg   [29:0] imageIn6_reg_1048;
 reg    ap_sig_ioackin_IMAGE_IN0_ARREADY;
 reg    ap_sig_ioackin_IMAGE_IN1_ARREADY;
 reg    ap_sig_ioackin_IMAGE_IN2_ARREADY;
 reg    ap_sig_ioackin_IMAGE_IN3_ARREADY;
-wire   [30:0] tmp_2_cast_fu_591_p1;
-reg   [30:0] tmp_2_cast_reg_1076;
+wire   [30:0] tmp_2_cast_fu_592_p1;
+reg   [30:0] tmp_2_cast_reg_1077;
 wire   [0:0] ap_CS_fsm_state8;
-wire   [0:0] tmp_fu_594_p2;
+wire   [0:0] tmp_fu_595_p2;
 wire   [0:0] ap_CS_fsm_state9;
-wire   [6:0] rows_2_fu_600_p2;
-reg   [6:0] rows_2_reg_1088;
-wire   [15:0] tmp_1_fu_610_p3;
-reg   [15:0] tmp_1_reg_1093;
-wire   [0:0] exitcond_fu_618_p2;
-reg   [0:0] ap_pipeline_reg_pp0_iter1_exitcond_reg_1101;
-wire   [10:0] indvar_next_fu_624_p2;
+wire   [6:0] rows_2_fu_601_p2;
+reg   [6:0] rows_2_reg_1089;
+wire   [15:0] tmp_1_fu_611_p3;
+reg   [15:0] tmp_1_reg_1094;
+wire   [0:0] exitcond_fu_619_p2;
+reg   [0:0] ap_pipeline_reg_pp0_iter1_exitcond_reg_1102;
+wire   [10:0] indvar_next_fu_625_p2;
 reg    ap_enable_reg_pp0_iter0;
-wire   [9:0] tmp_37_fu_634_p1;
-reg   [9:0] tmp_37_reg_1110;
-reg   [9:0] ap_pipeline_reg_pp0_iter1_tmp_37_reg_1110;
-reg   [5:0] tmp_9_reg_1115;
-reg   [5:0] ap_pipeline_reg_pp0_iter1_tmp_9_reg_1115;
-reg   [31:0] IMAGE_IN0_addr_read_reg_1120;
-wire   [0:0] exitcond1_fu_664_p2;
-reg   [0:0] ap_pipeline_reg_pp1_iter1_exitcond1_reg_1125;
-wire   [10:0] indvar_next1_fu_670_p2;
+wire   [9:0] tmp_34_fu_635_p1;
+reg   [9:0] tmp_34_reg_1111;
+reg   [9:0] ap_pipeline_reg_pp0_iter1_tmp_34_reg_1111;
+reg   [5:0] tmp_9_reg_1116;
+reg   [5:0] ap_pipeline_reg_pp0_iter1_tmp_9_reg_1116;
+reg   [31:0] IMAGE_IN0_addr_read_reg_1121;
+wire   [0:0] exitcond1_fu_665_p2;
+reg   [0:0] ap_pipeline_reg_pp1_iter1_exitcond1_reg_1126;
+wire   [10:0] indvar_next1_fu_671_p2;
 reg    ap_enable_reg_pp1_iter0;
-wire   [9:0] tmp_40_fu_680_p1;
-reg   [9:0] tmp_40_reg_1134;
-reg   [9:0] ap_pipeline_reg_pp1_iter1_tmp_40_reg_1134;
-reg   [5:0] tmp_41_reg_1139;
-reg   [5:0] ap_pipeline_reg_pp1_iter1_tmp_41_reg_1139;
-reg   [31:0] IMAGE_IN1_addr_read_reg_1144;
-wire   [0:0] exitcond2_fu_710_p2;
-reg   [0:0] ap_pipeline_reg_pp2_iter1_exitcond2_reg_1149;
-wire   [10:0] indvar_next2_fu_716_p2;
+wire   [9:0] tmp_37_fu_681_p1;
+reg   [9:0] tmp_37_reg_1135;
+reg   [9:0] ap_pipeline_reg_pp1_iter1_tmp_37_reg_1135;
+reg   [5:0] tmp_38_reg_1140;
+reg   [5:0] ap_pipeline_reg_pp1_iter1_tmp_38_reg_1140;
+reg   [31:0] IMAGE_IN1_addr_read_reg_1145;
+wire   [0:0] exitcond2_fu_711_p2;
+reg   [0:0] ap_pipeline_reg_pp2_iter1_exitcond2_reg_1150;
+wire   [10:0] indvar_next2_fu_717_p2;
 reg    ap_enable_reg_pp2_iter0;
-wire   [9:0] tmp_44_fu_726_p1;
-reg   [9:0] tmp_44_reg_1158;
-reg   [9:0] ap_pipeline_reg_pp2_iter1_tmp_44_reg_1158;
-reg   [5:0] tmp_45_reg_1163;
-reg   [5:0] ap_pipeline_reg_pp2_iter1_tmp_45_reg_1163;
-reg   [31:0] IMAGE_IN2_addr_read_reg_1168;
-wire   [0:0] exitcond3_fu_756_p2;
-reg   [0:0] ap_pipeline_reg_pp3_iter1_exitcond3_reg_1173;
-wire   [10:0] indvar_next3_fu_762_p2;
+wire   [9:0] tmp_41_fu_727_p1;
+reg   [9:0] tmp_41_reg_1159;
+reg   [9:0] ap_pipeline_reg_pp2_iter1_tmp_41_reg_1159;
+reg   [5:0] tmp_42_reg_1164;
+reg   [5:0] ap_pipeline_reg_pp2_iter1_tmp_42_reg_1164;
+reg   [31:0] IMAGE_IN2_addr_read_reg_1169;
+wire   [0:0] exitcond3_fu_757_p2;
+reg   [0:0] ap_pipeline_reg_pp3_iter1_exitcond3_reg_1174;
+wire   [10:0] indvar_next3_fu_763_p2;
 reg    ap_enable_reg_pp3_iter0;
-wire   [9:0] tmp_48_fu_772_p1;
-reg   [9:0] tmp_48_reg_1182;
-reg   [9:0] ap_pipeline_reg_pp3_iter1_tmp_48_reg_1182;
-reg   [5:0] tmp_49_reg_1187;
-reg   [5:0] ap_pipeline_reg_pp3_iter1_tmp_49_reg_1187;
-reg   [31:0] IMAGE_IN3_addr_read_reg_1192;
-wire   [0:0] exitcond_flatten_fu_802_p2;
-reg   [0:0] ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197;
-wire   [16:0] indvar_flatten_next_fu_808_p2;
-reg   [16:0] indvar_flatten_next_reg_1201;
+wire   [9:0] tmp_45_fu_773_p1;
+reg   [9:0] tmp_45_reg_1183;
+reg   [9:0] ap_pipeline_reg_pp3_iter1_tmp_45_reg_1183;
+reg   [5:0] tmp_46_reg_1188;
+reg   [5:0] ap_pipeline_reg_pp3_iter1_tmp_46_reg_1188;
+reg   [31:0] IMAGE_IN3_addr_read_reg_1193;
+wire   [0:0] exitcond_flatten_fu_803_p2;
+reg   [0:0] ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198;
+wire   [16:0] indvar_flatten_next_fu_809_p2;
+reg   [16:0] indvar_flatten_next_reg_1202;
 reg    ap_enable_reg_pp4_iter0;
-wire   [11:0] cols_mid2_fu_828_p3;
-reg   [11:0] cols_mid2_reg_1206;
-reg   [11:0] ap_pipeline_reg_pp4_iter1_cols_mid2_reg_1206;
-reg   [11:0] ap_pipeline_reg_pp4_iter2_cols_mid2_reg_1206;
-reg   [11:0] ap_pipeline_reg_pp4_iter3_cols_mid2_reg_1206;
-wire   [7:0] tmp_5_mid2_v_v_fu_836_p3;
-reg   [7:0] tmp_5_mid2_v_v_reg_1212;
-reg   [6:0] tmp_5_mid2_v_reg_1217;
-reg   [10:0] tmp_12_reg_1222;
-reg   [5:0] tmp_34_reg_1227;
-reg   [5:0] ap_pipeline_reg_pp4_iter1_tmp_34_reg_1227;
-reg   [5:0] ap_pipeline_reg_pp4_iter2_tmp_34_reg_1227;
-reg   [5:0] ap_pipeline_reg_pp4_iter3_tmp_34_reg_1227;
-wire   [18:0] idx2_fu_900_p2;
-reg   [18:0] idx2_reg_1232;
-reg   [18:0] ap_pipeline_reg_pp4_iter1_idx2_reg_1232;
-reg   [18:0] ap_pipeline_reg_pp4_iter2_idx2_reg_1232;
-reg   [18:0] ap_pipeline_reg_pp4_iter3_idx2_reg_1232;
-reg   [18:0] ap_pipeline_reg_pp4_iter4_idx2_reg_1232;
-wire   [63:0] tmp_44_cast_fu_926_p1;
-reg   [63:0] tmp_44_cast_reg_1238;
-reg   [63:0] ap_pipeline_reg_pp4_iter1_tmp_44_cast_reg_1238;
-wire   [31:0] image0_q0;
-reg   [31:0] pixelIn0_reg_1255;
+wire   [11:0] cols_mid2_fu_829_p3;
+reg   [11:0] cols_mid2_reg_1207;
+reg   [11:0] ap_pipeline_reg_pp4_iter1_cols_mid2_reg_1207;
+reg   [11:0] ap_pipeline_reg_pp4_iter2_cols_mid2_reg_1207;
+reg   [11:0] ap_pipeline_reg_pp4_iter3_cols_mid2_reg_1207;
+wire   [7:0] tmp_5_mid2_v_v_fu_837_p3;
+reg   [7:0] tmp_5_mid2_v_v_reg_1213;
+reg   [6:0] tmp_5_mid2_v_reg_1218;
+reg   [10:0] tmp_12_reg_1223;
+reg   [5:0] tmp_31_reg_1228;
+reg   [5:0] ap_pipeline_reg_pp4_iter1_tmp_31_reg_1228;
+reg   [5:0] ap_pipeline_reg_pp4_iter2_tmp_31_reg_1228;
+reg   [5:0] ap_pipeline_reg_pp4_iter3_tmp_31_reg_1228;
+wire   [18:0] idx2_fu_901_p2;
+reg   [18:0] idx2_reg_1233;
+reg   [18:0] ap_pipeline_reg_pp4_iter1_idx2_reg_1233;
+reg   [18:0] ap_pipeline_reg_pp4_iter2_idx2_reg_1233;
+reg   [18:0] ap_pipeline_reg_pp4_iter3_idx2_reg_1233;
+reg   [18:0] ap_pipeline_reg_pp4_iter4_idx2_reg_1233;
+wire   [63:0] tmp_41_cast_fu_927_p1;
+reg   [63:0] tmp_41_cast_reg_1239;
 wire   [31:0] image1_q0;
-reg   [31:0] pixelIn1_reg_1260;
-wire   [0:0] ap_CS_fsm_pp4_stage3;
-wire   [63:0] grp_fu_472_p1;
-reg   [63:0] tmp_14_reg_1265;
-reg   [63:0] tmp_16_reg_1270;
-wire   [11:0] cols_1_fu_931_p2;
-reg   [11:0] cols_1_reg_1275;
-reg   [63:0] tmp_15_reg_1280;
+reg   [31:0] pixelIn1_reg_1256;
 wire   [31:0] image2_q0;
-reg   [31:0] pixelIn2_reg_1295;
+reg   [31:0] pixelIn2_reg_1271;
+wire   [63:0] grp_fu_472_p1;
+reg   [63:0] tmp_15_reg_1276;
+wire   [31:0] image0_q0;
+reg   [31:0] pixelIn0_reg_1281;
 wire   [31:0] image3_q0;
-reg   [31:0] pixelIn3_reg_1300;
-reg   [31:0] ap_pipeline_reg_pp4_iter2_pixelIn3_reg_1300;
-reg   [63:0] tmp_19_reg_1305;
-wire   [0:0] ap_CS_fsm_pp4_stage5;
-wire   [63:0] grp_fu_475_p2;
-reg   [63:0] tmp_18_reg_1310;
+reg   [31:0] pixelIn3_reg_1286;
+reg   [63:0] tmp_18_reg_1291;
+reg   [63:0] tmp_14_reg_1296;
+reg   [63:0] tmp_21_reg_1301;
+wire   [11:0] cols_1_fu_932_p2;
+reg   [11:0] cols_1_reg_1306;
+wire   [0:0] ap_CS_fsm_pp4_stage12;
+wire   [63:0] grp_fu_479_p2;
+reg   [63:0] tmp_16_reg_1311;
+reg    ap_enable_reg_pp4_iter1;
+reg   [63:0] tmp_19_reg_1316;
+reg   [63:0] tmp_22_reg_1321;
+reg   [63:0] ap_pipeline_reg_pp4_iter2_tmp_22_reg_1321;
+reg   [63:0] tmp_17_reg_1326;
+reg   [63:0] tmp_26_reg_1331;
 wire   [0:0] ap_CS_fsm_pp4_stage10;
-reg   [63:0] tmp_27_reg_1315;
-reg   [63:0] tmp_20_reg_1320;
-reg    ap_enable_reg_pp4_iter2;
-reg   [63:0] tmp_21_reg_1325;
-reg   [63:0] tmp_24_reg_1330;
-reg   [63:0] tmp_28_reg_1335;
-wire   [0:0] ap_CS_fsm_pp4_stage8;
-reg   [63:0] tmp_31_reg_1340;
-wire   [0:0] ap_CS_fsm_pp4_stage9;
-reg   [63:0] tmp_22_reg_1345;
-reg   [63:0] tmp_25_reg_1350;
-reg   [63:0] tmp_29_reg_1355;
-reg   [63:0] tmp_32_reg_1360;
-wire   [17:0] idx1_fu_936_p3;
-reg   [17:0] idx1_reg_1365;
-wire   [30:0] imageOut10_sum_fu_946_p2;
-reg   [30:0] imageOut10_sum_reg_1370;
-reg   [63:0] tmp_30_reg_1380;
-reg   [31:0] pixelOut2_reg_1385;
-wire   [30:0] imageOut10_sum1_fu_970_p2;
-reg   [30:0] imageOut10_sum1_reg_1390;
-reg   [31:0] pixelOut3_reg_1395;
-wire   [30:0] imageOut10_sum2_fu_988_p2;
-reg   [30:0] imageOut10_sum2_reg_1405;
-wire   [30:0] imageOut10_sum3_fu_1012_p2;
-reg   [30:0] imageOut10_sum3_reg_1415;
+reg   [63:0] tmp_27_reg_1336;
+wire   [0:0] ap_CS_fsm_pp4_stage7;
+reg   [63:0] tmp_29_reg_1341;
+wire   [17:0] idx1_fu_937_p3;
+reg   [17:0] idx1_reg_1346;
+wire   [30:0] imageOut10_sum_fu_947_p2;
+reg   [30:0] imageOut10_sum_reg_1351;
+reg   [31:0] pixelOut2_reg_1361;
+reg   [31:0] pixelOut3_reg_1366;
+wire   [30:0] imageOut10_sum1_fu_971_p2;
+reg   [30:0] imageOut10_sum1_reg_1371;
+wire   [30:0] imageOut10_sum2_fu_989_p2;
+reg   [30:0] imageOut10_sum2_reg_1381;
+wire   [30:0] imageOut10_sum3_fu_1013_p2;
+reg   [30:0] imageOut10_sum3_reg_1391;
 reg    ap_enable_reg_pp0_iter2;
 wire   [0:0] ap_CS_fsm_state13;
 reg    ap_enable_reg_pp1_iter2;
@@ -963,18 +954,18 @@ wire   [0:0] ap_CS_fsm_state25;
 reg   [16:0] indvar_flatten_phi_fu_440_p4;
 reg   [7:0] rows1_phi_fu_451_p4;
 reg   [11:0] cols_phi_fu_462_p4;
-wire   [63:0] tmp_39_fu_659_p1;
-wire   [63:0] tmp_43_fu_705_p1;
-wire   [63:0] tmp_47_fu_751_p1;
-wire   [63:0] tmp_51_fu_797_p1;
-wire   [63:0] tmp_3_fu_551_p1;
-wire   [63:0] tmp_4_fu_561_p1;
-wire   [63:0] tmp_5_fu_571_p1;
-wire   [63:0] tmp_6_fu_581_p1;
-wire   [63:0] imageOut10_sum_cast_fu_951_p1;
-wire   [63:0] imageOut10_sum1_cast_fu_975_p1;
-wire   [63:0] imageOut10_sum2_cast_fu_993_p1;
-wire   [63:0] imageOut10_sum3_cast_fu_1017_p1;
+wire   [63:0] tmp_36_fu_660_p1;
+wire   [63:0] tmp_40_fu_706_p1;
+wire   [63:0] tmp_44_fu_752_p1;
+wire   [63:0] tmp_48_fu_798_p1;
+wire   [63:0] tmp_3_fu_552_p1;
+wire   [63:0] tmp_4_fu_562_p1;
+wire   [63:0] tmp_5_fu_572_p1;
+wire   [63:0] tmp_6_fu_582_p1;
+wire   [63:0] imageOut10_sum_cast_fu_952_p1;
+wire   [63:0] imageOut10_sum1_cast_fu_976_p1;
+wire   [63:0] imageOut10_sum2_cast_fu_994_p1;
+wire   [63:0] imageOut10_sum3_cast_fu_1018_p1;
 reg    ap_reg_ioackin_IMAGE_IN0_ARREADY;
 reg    ap_reg_ioackin_IMAGE_IN1_ARREADY;
 reg    ap_reg_ioackin_IMAGE_IN2_ARREADY;
@@ -985,46 +976,50 @@ reg   [63:0] grp_fu_469_p0;
 reg   [31:0] grp_fu_472_p0;
 reg   [63:0] grp_fu_475_p0;
 reg   [63:0] grp_fu_475_p1;
+wire   [0:0] ap_CS_fsm_pp4_stage11;
 reg   [63:0] grp_fu_479_p0;
 reg   [63:0] grp_fu_479_p1;
-wire   [5:0] tmp_7_fu_606_p1;
-wire   [15:0] indvar_cast9_fu_630_p1;
-wire   [15:0] imageIn0_addr_fu_638_p2;
-wire   [15:0] tmp_38_fu_653_p3;
-wire   [15:0] indvar1_cast7_fu_676_p1;
-wire   [15:0] imageIn1_addr_fu_684_p2;
-wire   [15:0] tmp_42_fu_699_p3;
-wire   [15:0] indvar2_cast5_fu_722_p1;
-wire   [15:0] imageIn2_addr_fu_730_p2;
-wire   [15:0] tmp_46_fu_745_p3;
-wire   [15:0] indvar3_cast3_fu_768_p1;
-wire   [15:0] imageIn3_addr_fu_776_p2;
-wire   [15:0] tmp_50_fu_791_p3;
-wire   [0:0] tmp_8_fu_820_p3;
-wire   [7:0] rows_1_fu_814_p2;
-wire   [6:0] tmp_10_fu_854_p1;
-wire   [17:0] tmp_7_cast_mid2_v_v_fu_858_p3;
-wire   [17:0] tmp_7_cast_mid2_v_fu_866_p2;
-wire   [18:0] cols_cast1_fu_876_p1;
-wire   [18:0] tmp_7_cast_mid2_fu_872_p1;
-wire   [16:0] tmp_s_fu_906_p3;
-wire   [17:0] tmp_11_cast_fu_913_p1;
-wire   [17:0] tmp_14_cast_fu_917_p1;
-wire   [17:0] tmp_13_fu_920_p2;
-wire   [30:0] tmp_35_cast_fu_942_p1;
-wire   [17:0] tmp_35_fu_961_p2;
-wire   [30:0] tmp_37_cast_fu_966_p1;
-wire   [30:0] tmp_38_cast_fu_985_p1;
-wire   [18:0] tmp_36_fu_1003_p2;
-wire   [30:0] tmp_40_cast_fu_1008_p1;
+wire   [5:0] tmp_7_fu_607_p1;
+wire   [15:0] indvar_cast9_fu_631_p1;
+wire   [15:0] imageIn0_addr_fu_639_p2;
+wire   [15:0] tmp_35_fu_654_p3;
+wire   [15:0] indvar1_cast7_fu_677_p1;
+wire   [15:0] imageIn1_addr_fu_685_p2;
+wire   [15:0] tmp_39_fu_700_p3;
+wire   [15:0] indvar2_cast5_fu_723_p1;
+wire   [15:0] imageIn2_addr_fu_731_p2;
+wire   [15:0] tmp_43_fu_746_p3;
+wire   [15:0] indvar3_cast3_fu_769_p1;
+wire   [15:0] imageIn3_addr_fu_777_p2;
+wire   [15:0] tmp_47_fu_792_p3;
+wire   [0:0] tmp_8_fu_821_p3;
+wire   [7:0] rows_1_fu_815_p2;
+wire   [6:0] tmp_10_fu_855_p1;
+wire   [17:0] tmp_7_cast_mid2_v_v_fu_859_p3;
+wire   [17:0] tmp_7_cast_mid2_v_fu_867_p2;
+wire   [18:0] cols_cast1_fu_877_p1;
+wire   [18:0] tmp_7_cast_mid2_fu_873_p1;
+wire   [16:0] tmp_s_fu_907_p3;
+wire   [17:0] tmp_11_cast_fu_914_p1;
+wire   [17:0] tmp_14_cast_fu_918_p1;
+wire   [17:0] tmp_13_fu_921_p2;
+wire   [30:0] tmp_32_cast_fu_943_p1;
+wire   [17:0] tmp_32_fu_962_p2;
+wire   [30:0] tmp_34_cast_fu_967_p1;
+wire   [30:0] tmp_35_cast_fu_986_p1;
+wire   [18:0] tmp_33_fu_1004_p2;
+wire   [30:0] tmp_37_cast_fu_1009_p1;
 reg    grp_fu_469_ce;
 reg   [1:0] grp_fu_475_opcode;
 reg    grp_fu_475_ce;
 reg    grp_fu_479_ce;
-wire   [0:0] ap_CS_fsm_state98;
+wire   [0:0] ap_CS_fsm_state87;
 reg   [30:0] ap_NS_fsm;
-reg    ap_condition_1465;
-reg    ap_condition_926;
+reg    ap_condition_385;
+reg    ap_condition_1447;
+reg    ap_condition_429;
+reg    ap_condition_446;
+reg    ap_condition_933;
 
 // power-on initialization
 initial begin
@@ -1033,16 +1028,15 @@ initial begin
 #0 ap_enable_reg_pp1_iter1 = 1'b0;
 #0 ap_enable_reg_pp2_iter1 = 1'b0;
 #0 ap_enable_reg_pp3_iter1 = 1'b0;
-#0 ap_enable_reg_pp4_iter4 = 1'b0;
-#0 ap_enable_reg_pp4_iter5 = 1'b0;
-#0 ap_enable_reg_pp4_iter1 = 1'b0;
 #0 ap_enable_reg_pp4_iter3 = 1'b0;
+#0 ap_enable_reg_pp4_iter4 = 1'b0;
+#0 ap_enable_reg_pp4_iter2 = 1'b0;
 #0 ap_enable_reg_pp0_iter0 = 1'b0;
 #0 ap_enable_reg_pp1_iter0 = 1'b0;
 #0 ap_enable_reg_pp2_iter0 = 1'b0;
 #0 ap_enable_reg_pp3_iter0 = 1'b0;
 #0 ap_enable_reg_pp4_iter0 = 1'b0;
-#0 ap_enable_reg_pp4_iter2 = 1'b0;
+#0 ap_enable_reg_pp4_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
 #0 ap_enable_reg_pp1_iter2 = 1'b0;
 #0 ap_enable_reg_pp2_iter2 = 1'b0;
@@ -1676,7 +1670,7 @@ image0_U(
     .address0(image0_address0),
     .ce0(image0_ce0),
     .we0(image0_we0),
-    .d0(IMAGE_IN0_addr_read_reg_1120),
+    .d0(IMAGE_IN0_addr_read_reg_1121),
     .q0(image0_q0)
 );
 
@@ -1690,7 +1684,7 @@ image1_U(
     .address0(image1_address0),
     .ce0(image1_ce0),
     .we0(image1_we0),
-    .d0(IMAGE_IN1_addr_read_reg_1144),
+    .d0(IMAGE_IN1_addr_read_reg_1145),
     .q0(image1_q0)
 );
 
@@ -1704,7 +1698,7 @@ image2_U(
     .address0(image2_address0),
     .ce0(image2_ce0),
     .we0(image2_we0),
-    .d0(IMAGE_IN2_addr_read_reg_1168),
+    .d0(IMAGE_IN2_addr_read_reg_1169),
     .q0(image2_q0)
 );
 
@@ -1718,7 +1712,7 @@ image3_U(
     .address0(image3_address0),
     .ce0(image3_ce0),
     .we0(image3_we0),
-    .d0(IMAGE_IN3_addr_read_reg_1192),
+    .d0(IMAGE_IN3_addr_read_reg_1193),
     .q0(image3_q0)
 );
 
@@ -1788,9 +1782,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp0_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & ~(1'b0 == exitcond_fu_618_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & ~(1'b0 == exitcond_fu_619_p2))) begin
             ap_enable_reg_pp0_iter0 <= 1'b0;
-        end else if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_594_p2))) begin
+        end else if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_595_p2))) begin
             ap_enable_reg_pp0_iter0 <= 1'b1;
         end
     end
@@ -1800,9 +1794,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b0 == exitcond_fu_618_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b0 == exitcond_fu_619_p2))) begin
             ap_enable_reg_pp0_iter1 <= 1'b1;
-        end else if ((((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_594_p2)) | ((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & ~(1'b0 == exitcond_fu_618_p2)))) begin
+        end else if ((((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_595_p2)) | ((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & ~(1'b0 == exitcond_fu_619_p2)))) begin
             ap_enable_reg_pp0_iter1 <= 1'b0;
         end
     end
@@ -1812,9 +1806,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp0_iter2 <= 1'b0;
     end else begin
-        if (~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0))) begin
+        if (~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0))) begin
             ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
-        end else if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_594_p2))) begin
+        end else if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_595_p2))) begin
             ap_enable_reg_pp0_iter2 <= 1'b0;
         end
     end
@@ -1824,7 +1818,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp1_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & ~(1'b0 == exitcond1_fu_664_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & ~(1'b0 == exitcond1_fu_665_p2))) begin
             ap_enable_reg_pp1_iter0 <= 1'b0;
         end else if ((1'b1 == ap_CS_fsm_state13)) begin
             ap_enable_reg_pp1_iter0 <= 1'b1;
@@ -1836,9 +1830,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp1_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b0 == exitcond1_fu_664_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b0 == exitcond1_fu_665_p2))) begin
             ap_enable_reg_pp1_iter1 <= 1'b1;
-        end else if (((1'b1 == ap_CS_fsm_state13) | ((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & ~(1'b0 == exitcond1_fu_664_p2)))) begin
+        end else if (((1'b1 == ap_CS_fsm_state13) | ((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & ~(1'b0 == exitcond1_fu_665_p2)))) begin
             ap_enable_reg_pp1_iter1 <= 1'b0;
         end
     end
@@ -1848,7 +1842,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp1_iter2 <= 1'b0;
     end else begin
-        if (~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0))) begin
+        if (~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0))) begin
             ap_enable_reg_pp1_iter2 <= ap_enable_reg_pp1_iter1;
         end else if ((1'b1 == ap_CS_fsm_state13)) begin
             ap_enable_reg_pp1_iter2 <= 1'b0;
@@ -1860,7 +1854,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp2_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & ~(1'b0 == exitcond2_fu_710_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & ~(1'b0 == exitcond2_fu_711_p2))) begin
             ap_enable_reg_pp2_iter0 <= 1'b0;
         end else if ((1'b1 == ap_CS_fsm_state17)) begin
             ap_enable_reg_pp2_iter0 <= 1'b1;
@@ -1872,9 +1866,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp2_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b0 == exitcond2_fu_710_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b0 == exitcond2_fu_711_p2))) begin
             ap_enable_reg_pp2_iter1 <= 1'b1;
-        end else if (((1'b1 == ap_CS_fsm_state17) | ((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & ~(1'b0 == exitcond2_fu_710_p2)))) begin
+        end else if (((1'b1 == ap_CS_fsm_state17) | ((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & ~(1'b0 == exitcond2_fu_711_p2)))) begin
             ap_enable_reg_pp2_iter1 <= 1'b0;
         end
     end
@@ -1884,7 +1878,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp2_iter2 <= 1'b0;
     end else begin
-        if (~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0))) begin
+        if (~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0))) begin
             ap_enable_reg_pp2_iter2 <= ap_enable_reg_pp2_iter1;
         end else if ((1'b1 == ap_CS_fsm_state17)) begin
             ap_enable_reg_pp2_iter2 <= 1'b0;
@@ -1896,7 +1890,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp3_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & ~(1'b0 == exitcond3_fu_756_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & ~(1'b0 == exitcond3_fu_757_p2))) begin
             ap_enable_reg_pp3_iter0 <= 1'b0;
         end else if ((1'b1 == ap_CS_fsm_state21)) begin
             ap_enable_reg_pp3_iter0 <= 1'b1;
@@ -1908,9 +1902,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp3_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b0 == exitcond3_fu_756_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b0 == exitcond3_fu_757_p2))) begin
             ap_enable_reg_pp3_iter1 <= 1'b1;
-        end else if (((1'b1 == ap_CS_fsm_state21) | ((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & ~(1'b0 == exitcond3_fu_756_p2)))) begin
+        end else if (((1'b1 == ap_CS_fsm_state21) | ((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & ~(1'b0 == exitcond3_fu_757_p2)))) begin
             ap_enable_reg_pp3_iter1 <= 1'b0;
         end
     end
@@ -1920,7 +1914,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp3_iter2 <= 1'b0;
     end else begin
-        if (~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0))) begin
+        if (~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0))) begin
             ap_enable_reg_pp3_iter2 <= ap_enable_reg_pp3_iter1;
         end else if ((1'b1 == ap_CS_fsm_state21)) begin
             ap_enable_reg_pp3_iter2 <= 1'b0;
@@ -1932,9 +1926,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp4_iter0 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & ~(1'b0 == exitcond_flatten_fu_802_p2))) begin
+        if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & ~(1'b0 == exitcond_flatten_fu_803_p2))) begin
             ap_enable_reg_pp4_iter0 <= 1'b0;
-        end else if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_594_p2))) begin
+        end else if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_595_p2))) begin
             ap_enable_reg_pp4_iter0 <= 1'b1;
         end
     end
@@ -1944,9 +1938,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp4_iter1 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b0 == exitcond_flatten_reg_1197))) begin
+        if (((1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage12))) begin
             ap_enable_reg_pp4_iter1 <= 1'b1;
-        end else if ((((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_594_p2)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & ~(1'b0 == exitcond_flatten_reg_1197)))) begin
+        end else if ((((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_595_p2)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & ~(1'b0 == exitcond_flatten_reg_1198)))) begin
             ap_enable_reg_pp4_iter1 <= 1'b0;
         end
     end
@@ -1956,7 +1950,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp4_iter2 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
+        if ((1'b1 == ap_CS_fsm_pp4_stage12)) begin
             ap_enable_reg_pp4_iter2 <= ap_enable_reg_pp4_iter1;
         end
     end
@@ -1966,7 +1960,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp4_iter3 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
+        if ((1'b1 == ap_CS_fsm_pp4_stage12)) begin
             ap_enable_reg_pp4_iter3 <= ap_enable_reg_pp4_iter2;
         end
     end
@@ -1976,20 +1970,10 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_enable_reg_pp4_iter4 <= 1'b0;
     end else begin
-        if (((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
+        if ((1'b1 == ap_CS_fsm_pp4_stage12)) begin
             ap_enable_reg_pp4_iter4 <= ap_enable_reg_pp4_iter3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_enable_reg_pp4_iter5 <= 1'b0;
-    end else begin
-        if (((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
-            ap_enable_reg_pp4_iter5 <= ap_enable_reg_pp4_iter4;
-        end else if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_594_p2))) begin
-            ap_enable_reg_pp4_iter5 <= 1'b0;
+        end else if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_595_p2))) begin
+            ap_enable_reg_pp4_iter4 <= 1'b0;
         end
     end
 end
@@ -1999,7 +1983,7 @@ always @ (posedge ap_clk) begin
         ap_reg_ioackin_IMAGE_IN0_ARREADY <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            if ((ap_condition_926 == 1'b1)) begin
+            if ((ap_condition_933 == 1'b1)) begin
                 ap_reg_ioackin_IMAGE_IN0_ARREADY <= 1'b0;
             end else if ((1'b1 == IMAGE_IN0_ARREADY)) begin
                 ap_reg_ioackin_IMAGE_IN0_ARREADY <= 1'b1;
@@ -2013,7 +1997,7 @@ always @ (posedge ap_clk) begin
         ap_reg_ioackin_IMAGE_IN1_ARREADY <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            if ((ap_condition_926 == 1'b1)) begin
+            if ((ap_condition_933 == 1'b1)) begin
                 ap_reg_ioackin_IMAGE_IN1_ARREADY <= 1'b0;
             end else if ((1'b1 == IMAGE_IN1_ARREADY)) begin
                 ap_reg_ioackin_IMAGE_IN1_ARREADY <= 1'b1;
@@ -2027,7 +2011,7 @@ always @ (posedge ap_clk) begin
         ap_reg_ioackin_IMAGE_IN2_ARREADY <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            if ((ap_condition_926 == 1'b1)) begin
+            if ((ap_condition_933 == 1'b1)) begin
                 ap_reg_ioackin_IMAGE_IN2_ARREADY <= 1'b0;
             end else if ((1'b1 == IMAGE_IN2_ARREADY)) begin
                 ap_reg_ioackin_IMAGE_IN2_ARREADY <= 1'b1;
@@ -2041,7 +2025,7 @@ always @ (posedge ap_clk) begin
         ap_reg_ioackin_IMAGE_IN3_ARREADY <= 1'b0;
     end else begin
         if ((1'b1 == ap_CS_fsm_state2)) begin
-            if ((ap_condition_926 == 1'b1)) begin
+            if ((ap_condition_933 == 1'b1)) begin
                 ap_reg_ioackin_IMAGE_IN3_ARREADY <= 1'b0;
             end else if ((1'b1 == IMAGE_IN3_ARREADY)) begin
                 ap_reg_ioackin_IMAGE_IN3_ARREADY <= 1'b1;
@@ -2054,9 +2038,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_reg_ioackin_IMAGE_OUT_AWREADY <= 1'b0;
     end else begin
-        if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage11) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))))) begin
+        if ((((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage8) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)))) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))))) begin
             ap_reg_ioackin_IMAGE_OUT_AWREADY <= 1'b0;
-        end else if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b1 == IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage11) & (1'b1 == IMAGE_OUT_AWREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == IMAGE_OUT_AWREADY)))) begin
+        end else if ((((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage8) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b1 == IMAGE_OUT_AWREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == IMAGE_OUT_AWREADY)))) begin
             ap_reg_ioackin_IMAGE_OUT_AWREADY <= 1'b1;
         end
     end
@@ -2066,418 +2050,381 @@ always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
         ap_reg_ioackin_IMAGE_OUT_WREADY <= 1'b0;
     end else begin
-        if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
+        if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
             ap_reg_ioackin_IMAGE_OUT_WREADY <= 1'b0;
-        end else if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == IMAGE_OUT_WREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7) & (1'b1 == IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b1 == IMAGE_OUT_WREADY)))) begin
+        end else if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == IMAGE_OUT_WREADY)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9) & (1'b1 == IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b1 == IMAGE_OUT_WREADY)) | ((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == IMAGE_OUT_WREADY)))) begin
             ap_reg_ioackin_IMAGE_OUT_WREADY <= 1'b1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_594_p2))) begin
+    if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_595_p2))) begin
         cols_reg_458 <= ap_const_lv12_0;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        cols_reg_458 <= cols_1_reg_1275;
+    end else if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        cols_reg_458 <= cols_1_reg_1306;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state13)) begin
         indvar1_reg_403 <= ap_const_lv11_0;
-    end else if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter0) & (1'b0 == exitcond1_fu_664_p2))) begin
-        indvar1_reg_403 <= indvar_next1_fu_670_p2;
+    end else if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter0) & (1'b0 == exitcond1_fu_665_p2))) begin
+        indvar1_reg_403 <= indvar_next1_fu_671_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state17)) begin
         indvar2_reg_414 <= ap_const_lv11_0;
-    end else if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter0) & (1'b0 == exitcond2_fu_710_p2))) begin
-        indvar2_reg_414 <= indvar_next2_fu_716_p2;
+    end else if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter0) & (1'b0 == exitcond2_fu_711_p2))) begin
+        indvar2_reg_414 <= indvar_next2_fu_717_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state21)) begin
         indvar3_reg_425 <= ap_const_lv11_0;
-    end else if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter0) & (1'b0 == exitcond3_fu_756_p2))) begin
-        indvar3_reg_425 <= indvar_next3_fu_762_p2;
+    end else if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter0) & (1'b0 == exitcond3_fu_757_p2))) begin
+        indvar3_reg_425 <= indvar_next3_fu_763_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_594_p2))) begin
+    if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_595_p2))) begin
         indvar_flatten_reg_436 <= ap_const_lv17_0;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        indvar_flatten_reg_436 <= indvar_flatten_next_reg_1201;
+    end else if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        indvar_flatten_reg_436 <= indvar_flatten_next_reg_1202;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter0) & (1'b0 == exitcond_fu_618_p2))) begin
-        indvar_reg_392 <= indvar_next_fu_624_p2;
-    end else if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_594_p2))) begin
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter0) & (1'b0 == exitcond_fu_619_p2))) begin
+        indvar_reg_392 <= indvar_next_fu_625_p2;
+    end else if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_595_p2))) begin
         indvar_reg_392 <= ap_const_lv11_0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_594_p2))) begin
+    if (((1'b1 == ap_CS_fsm_state9) & ~(1'b0 == tmp_fu_595_p2))) begin
         rows1_reg_447 <= ap_const_lv8_0;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        rows1_reg_447 <= tmp_5_mid2_v_v_reg_1212;
+    end else if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        rows1_reg_447 <= tmp_5_mid2_v_v_reg_1213;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state25)) begin
-        rows_reg_381 <= rows_2_reg_1088;
+        rows_reg_381 <= rows_2_reg_1089;
     end else if ((1'b1 == ap_CS_fsm_state8)) begin
         rows_reg_381 <= ap_const_lv7_0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (exitcond_reg_1101 == 1'b0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)))) begin
-        IMAGE_IN0_addr_read_reg_1120 <= IMAGE_IN0_RDATA;
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (exitcond_reg_1102 == 1'b0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)))) begin
+        IMAGE_IN0_addr_read_reg_1121 <= IMAGE_IN0_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == exitcond1_reg_1125) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)))) begin
-        IMAGE_IN1_addr_read_reg_1144 <= IMAGE_IN1_RDATA;
+    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b0 == exitcond1_reg_1126) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)))) begin
+        IMAGE_IN1_addr_read_reg_1145 <= IMAGE_IN1_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp2_stage0) & (1'b0 == exitcond2_reg_1149) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)))) begin
-        IMAGE_IN2_addr_read_reg_1168 <= IMAGE_IN2_RDATA;
+    if (((1'b1 == ap_CS_fsm_pp2_stage0) & (1'b0 == exitcond2_reg_1150) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)))) begin
+        IMAGE_IN2_addr_read_reg_1169 <= IMAGE_IN2_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp3_stage0) & (1'b0 == exitcond3_reg_1173) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)))) begin
-        IMAGE_IN3_addr_read_reg_1192 <= IMAGE_IN3_RDATA;
+    if (((1'b1 == ap_CS_fsm_pp3_stage0) & (1'b0 == exitcond3_reg_1174) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)))) begin
+        IMAGE_IN3_addr_read_reg_1193 <= IMAGE_IN3_RDATA;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)))) begin
-        ap_pipeline_reg_pp0_iter1_exitcond_reg_1101 <= exitcond_reg_1101;
-        ap_pipeline_reg_pp0_iter1_tmp_37_reg_1110 <= tmp_37_reg_1110;
-        ap_pipeline_reg_pp0_iter1_tmp_9_reg_1115 <= tmp_9_reg_1115;
-        exitcond_reg_1101 <= exitcond_fu_618_p2;
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)))) begin
+        ap_pipeline_reg_pp0_iter1_exitcond_reg_1102 <= exitcond_reg_1102;
+        ap_pipeline_reg_pp0_iter1_tmp_34_reg_1111 <= tmp_34_reg_1111;
+        ap_pipeline_reg_pp0_iter1_tmp_9_reg_1116 <= tmp_9_reg_1116;
+        exitcond_reg_1102 <= exitcond_fu_619_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)))) begin
-        ap_pipeline_reg_pp1_iter1_exitcond1_reg_1125 <= exitcond1_reg_1125;
-        ap_pipeline_reg_pp1_iter1_tmp_40_reg_1134 <= tmp_40_reg_1134;
-        ap_pipeline_reg_pp1_iter1_tmp_41_reg_1139 <= tmp_41_reg_1139;
-        exitcond1_reg_1125 <= exitcond1_fu_664_p2;
+    if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)))) begin
+        ap_pipeline_reg_pp1_iter1_exitcond1_reg_1126 <= exitcond1_reg_1126;
+        ap_pipeline_reg_pp1_iter1_tmp_37_reg_1135 <= tmp_37_reg_1135;
+        ap_pipeline_reg_pp1_iter1_tmp_38_reg_1140 <= tmp_38_reg_1140;
+        exitcond1_reg_1126 <= exitcond1_fu_665_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)))) begin
-        ap_pipeline_reg_pp2_iter1_exitcond2_reg_1149 <= exitcond2_reg_1149;
-        ap_pipeline_reg_pp2_iter1_tmp_44_reg_1158 <= tmp_44_reg_1158;
-        ap_pipeline_reg_pp2_iter1_tmp_45_reg_1163 <= tmp_45_reg_1163;
-        exitcond2_reg_1149 <= exitcond2_fu_710_p2;
+    if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)))) begin
+        ap_pipeline_reg_pp2_iter1_exitcond2_reg_1150 <= exitcond2_reg_1150;
+        ap_pipeline_reg_pp2_iter1_tmp_41_reg_1159 <= tmp_41_reg_1159;
+        ap_pipeline_reg_pp2_iter1_tmp_42_reg_1164 <= tmp_42_reg_1164;
+        exitcond2_reg_1150 <= exitcond2_fu_711_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)))) begin
-        ap_pipeline_reg_pp3_iter1_exitcond3_reg_1173 <= exitcond3_reg_1173;
-        ap_pipeline_reg_pp3_iter1_tmp_48_reg_1182 <= tmp_48_reg_1182;
-        ap_pipeline_reg_pp3_iter1_tmp_49_reg_1187 <= tmp_49_reg_1187;
-        exitcond3_reg_1173 <= exitcond3_fu_756_p2;
+    if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)))) begin
+        ap_pipeline_reg_pp3_iter1_exitcond3_reg_1174 <= exitcond3_reg_1174;
+        ap_pipeline_reg_pp3_iter1_tmp_45_reg_1183 <= tmp_45_reg_1183;
+        ap_pipeline_reg_pp3_iter1_tmp_46_reg_1188 <= tmp_46_reg_1188;
+        exitcond3_reg_1174 <= exitcond3_fu_757_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)))) begin
-        ap_pipeline_reg_pp4_iter1_cols_mid2_reg_1206 <= cols_mid2_reg_1206;
-        ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197 <= exitcond_flatten_reg_1197;
-        ap_pipeline_reg_pp4_iter1_idx2_reg_1232 <= idx2_reg_1232;
-        ap_pipeline_reg_pp4_iter1_tmp_34_reg_1227 <= tmp_34_reg_1227;
-        ap_pipeline_reg_pp4_iter2_cols_mid2_reg_1206 <= ap_pipeline_reg_pp4_iter1_cols_mid2_reg_1206;
-        ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197 <= ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197;
-        ap_pipeline_reg_pp4_iter2_idx2_reg_1232 <= ap_pipeline_reg_pp4_iter1_idx2_reg_1232;
-        ap_pipeline_reg_pp4_iter2_tmp_34_reg_1227 <= ap_pipeline_reg_pp4_iter1_tmp_34_reg_1227;
-        ap_pipeline_reg_pp4_iter3_cols_mid2_reg_1206 <= ap_pipeline_reg_pp4_iter2_cols_mid2_reg_1206;
-        ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197 <= ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197;
-        ap_pipeline_reg_pp4_iter3_idx2_reg_1232 <= ap_pipeline_reg_pp4_iter2_idx2_reg_1232;
-        ap_pipeline_reg_pp4_iter3_tmp_34_reg_1227 <= ap_pipeline_reg_pp4_iter2_tmp_34_reg_1227;
-        ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197 <= ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197;
-        ap_pipeline_reg_pp4_iter4_idx2_reg_1232 <= ap_pipeline_reg_pp4_iter3_idx2_reg_1232;
-        ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197 <= ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197;
-        exitcond_flatten_reg_1197 <= exitcond_flatten_fu_802_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)))) begin
+        ap_pipeline_reg_pp4_iter1_cols_mid2_reg_1207 <= cols_mid2_reg_1207;
+        ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198 <= exitcond_flatten_reg_1198;
+        ap_pipeline_reg_pp4_iter1_idx2_reg_1233 <= idx2_reg_1233;
+        ap_pipeline_reg_pp4_iter1_tmp_31_reg_1228 <= tmp_31_reg_1228;
+        ap_pipeline_reg_pp4_iter2_cols_mid2_reg_1207 <= ap_pipeline_reg_pp4_iter1_cols_mid2_reg_1207;
+        ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198 <= ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198;
+        ap_pipeline_reg_pp4_iter2_idx2_reg_1233 <= ap_pipeline_reg_pp4_iter1_idx2_reg_1233;
+        ap_pipeline_reg_pp4_iter2_tmp_31_reg_1228 <= ap_pipeline_reg_pp4_iter1_tmp_31_reg_1228;
+        ap_pipeline_reg_pp4_iter3_cols_mid2_reg_1207 <= ap_pipeline_reg_pp4_iter2_cols_mid2_reg_1207;
+        ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198 <= ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198;
+        ap_pipeline_reg_pp4_iter3_idx2_reg_1233 <= ap_pipeline_reg_pp4_iter2_idx2_reg_1233;
+        ap_pipeline_reg_pp4_iter3_tmp_31_reg_1228 <= ap_pipeline_reg_pp4_iter2_tmp_31_reg_1228;
+        ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198 <= ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198;
+        ap_pipeline_reg_pp4_iter4_idx2_reg_1233 <= ap_pipeline_reg_pp4_iter3_idx2_reg_1233;
+        exitcond_flatten_reg_1198 <= exitcond_flatten_fu_803_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
-        ap_pipeline_reg_pp4_iter1_tmp_44_cast_reg_1238[17 : 0] <= tmp_44_cast_reg_1238[17 : 0];
+    if (((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
+        ap_pipeline_reg_pp4_iter2_tmp_22_reg_1321 <= tmp_22_reg_1321;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) begin
-        ap_pipeline_reg_pp4_iter2_pixelIn3_reg_1300 <= pixelIn3_reg_1300;
+    if (((1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage12))) begin
+        cols_1_reg_1306 <= cols_1_fu_932_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        cols_1_reg_1275 <= cols_1_fu_931_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_fu_803_p2))) begin
+        cols_mid2_reg_1207 <= cols_mid2_fu_829_p3;
+        idx2_reg_1233 <= idx2_fu_901_p2;
+        tmp_12_reg_1223 <= {{cols_mid2_fu_829_p3[ap_const_lv32_B : ap_const_lv32_1]}};
+        tmp_31_reg_1228 <= {{tmp_5_mid2_v_v_fu_837_p3[ap_const_lv32_6 : ap_const_lv32_1]}};
+        tmp_5_mid2_v_reg_1218 <= {{tmp_5_mid2_v_v_fu_837_p3[ap_const_lv32_7 : ap_const_lv32_1]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_fu_802_p2))) begin
-        cols_mid2_reg_1206 <= cols_mid2_fu_828_p3;
-        idx2_reg_1232 <= idx2_fu_900_p2;
-        tmp_12_reg_1222 <= {{cols_mid2_fu_828_p3[ap_const_lv32_B : ap_const_lv32_1]}};
-        tmp_34_reg_1227 <= {{tmp_5_mid2_v_v_fu_836_p3[ap_const_lv32_6 : ap_const_lv32_1]}};
-        tmp_5_mid2_v_reg_1217 <= {{tmp_5_mid2_v_v_fu_836_p3[ap_const_lv32_7 : ap_const_lv32_1]}};
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)))) begin
-        idx1_reg_1365 <= idx1_fu_936_p3;
-        imageOut10_sum_reg_1370 <= imageOut10_sum_fu_946_p2;
+    if (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)))) begin
+        idx1_reg_1346 <= idx1_fu_937_p3;
+        imageOut10_sum_reg_1351 <= imageOut10_sum_fu_947_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((ap_CS_fsm_state1 == 1'b1) & ~(ap_start == 1'b0))) begin
-        imageIn4_reg_1037 <= {{imageIn2[ap_const_lv32_1F : ap_const_lv32_2]}};
-        imageIn5_reg_1042 <= {{imageIn1[ap_const_lv32_1F : ap_const_lv32_2]}};
-        imageIn6_reg_1047 <= {{imageIn0[ap_const_lv32_1F : ap_const_lv32_2]}};
-        imageIn_reg_1032 <= {{imageIn3[ap_const_lv32_1F : ap_const_lv32_2]}};
-        tmp_2_reg_1027 <= {{imageOut[ap_const_lv32_1F : ap_const_lv32_2]}};
+        imageIn4_reg_1038 <= {{imageIn2[ap_const_lv32_1F : ap_const_lv32_2]}};
+        imageIn5_reg_1043 <= {{imageIn1[ap_const_lv32_1F : ap_const_lv32_2]}};
+        imageIn6_reg_1048 <= {{imageIn0[ap_const_lv32_1F : ap_const_lv32_2]}};
+        imageIn_reg_1033 <= {{imageIn3[ap_const_lv32_1F : ap_const_lv32_2]}};
+        tmp_2_reg_1028 <= {{imageOut[ap_const_lv32_1F : ap_const_lv32_2]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
-        imageOut10_sum1_reg_1390 <= imageOut10_sum1_fu_970_p2;
+    if (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage7))) begin
+        imageOut10_sum1_reg_1371 <= imageOut10_sum1_fu_971_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage10))) begin
-        imageOut10_sum2_reg_1405 <= imageOut10_sum2_fu_988_p2;
+    if (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage12))) begin
+        imageOut10_sum2_reg_1381 <= imageOut10_sum2_fu_989_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
-        imageOut10_sum3_reg_1415 <= imageOut10_sum3_fu_1012_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
+        imageOut10_sum3_reg_1391 <= imageOut10_sum3_fu_1013_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
-        indvar_flatten_next_reg_1201 <= indvar_flatten_next_fu_808_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
+        indvar_flatten_next_reg_1202 <= indvar_flatten_next_fu_809_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        pixelIn0_reg_1255 <= image0_q0;
+    if (((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1198))) begin
+        pixelIn0_reg_1281 <= image0_q0;
+        pixelIn3_reg_1286 <= image3_q0;
+        tmp_18_reg_1291 <= grp_fu_472_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        pixelIn1_reg_1260 <= image1_q0;
-        tmp_14_reg_1265 <= grp_fu_472_p1;
+    if (((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1198))) begin
+        pixelIn1_reg_1256 <= image1_q0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) begin
-        pixelIn2_reg_1295 <= image2_q0;
-        pixelIn3_reg_1300 <= image3_q0;
+    if (((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1198))) begin
+        pixelIn2_reg_1271 <= image2_q0;
+        tmp_15_reg_1276 <= grp_fu_472_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
-        pixelOut2_reg_1385 <= grp_fu_469_p1;
+    if (((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
+        pixelOut2_reg_1361 <= grp_fu_469_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))))) begin
-        pixelOut3_reg_1395 <= grp_fu_469_p1;
+    if (((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)))) begin
+        pixelOut3_reg_1366 <= grp_fu_469_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter3) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197)))) begin
-        reg_485 <= grp_fu_479_p2;
+    if ((((1'b1 == ap_CS_fsm_pp4_stage5) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))))) begin
+        reg_485 <= grp_fu_475_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))))) begin
-        reg_491 <= grp_fu_469_p1;
+    if ((((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
+        reg_491 <= grp_fu_475_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
-        reg_496 <= grp_fu_479_p2;
+    if ((((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
+        reg_497 <= grp_fu_469_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state9)) begin
-        rows_2_reg_1088 <= rows_2_fu_600_p2;
+        rows_2_reg_1089 <= rows_2_fu_601_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        tmp_15_reg_1280 <= grp_fu_479_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage5) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1198))) begin
+        tmp_14_reg_1296 <= grp_fu_472_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        tmp_16_reg_1270 <= grp_fu_472_p1;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        tmp_16_reg_1311 <= grp_fu_479_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage10))) begin
-        tmp_18_reg_1310 <= grp_fu_475_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage9) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)))))) begin
+        tmp_17_reg_1326 <= grp_fu_475_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
-        tmp_19_reg_1305 <= grp_fu_472_p1;
+    if (((1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198))) begin
+        tmp_19_reg_1316 <= grp_fu_479_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_594_p2))) begin
-        tmp_1_reg_1093[15 : 10] <= tmp_1_fu_610_p3[15 : 10];
+    if (((1'b1 == ap_CS_fsm_state9) & (1'b0 == tmp_fu_595_p2))) begin
+        tmp_1_reg_1094[15 : 10] <= tmp_1_fu_611_p3[15 : 10];
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter2) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197))) begin
-        tmp_20_reg_1320 <= grp_fu_475_p2;
-        tmp_21_reg_1325 <= grp_fu_472_p1;
+    if (((1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_reg_1198))) begin
+        tmp_21_reg_1301 <= grp_fu_472_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) begin
-        tmp_22_reg_1345 <= grp_fu_475_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198))) begin
+        tmp_22_reg_1321 <= grp_fu_479_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage7) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197))) begin
-        tmp_24_reg_1330 <= grp_fu_475_p2;
+    if (((1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage10))) begin
+        tmp_26_reg_1331 <= grp_fu_475_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        tmp_25_reg_1350 <= grp_fu_475_p2;
+    if (((1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage7))) begin
+        tmp_27_reg_1336 <= grp_fu_475_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage11) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)))) begin
-        tmp_27_reg_1315 <= grp_fu_475_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage8))) begin
-        tmp_28_reg_1335 <= grp_fu_475_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) begin
-        tmp_29_reg_1355 <= grp_fu_475_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) begin
+        tmp_29_reg_1341 <= grp_fu_475_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state8)) begin
-        tmp_2_cast_reg_1076[29 : 0] <= tmp_2_cast_fu_591_p1[29 : 0];
+        tmp_2_cast_reg_1077[29 : 0] <= tmp_2_cast_fu_592_p1[29 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        tmp_30_reg_1380 <= grp_fu_479_p2;
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b0 == exitcond_fu_619_p2))) begin
+        tmp_34_reg_1111 <= tmp_34_fu_635_p1;
+        tmp_9_reg_1116 <= {{imageIn0_addr_fu_639_p2[ap_const_lv32_F : ap_const_lv32_A]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage9))) begin
-        tmp_31_reg_1340 <= grp_fu_475_p2;
+    if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b0 == exitcond1_fu_665_p2))) begin
+        tmp_37_reg_1135 <= tmp_37_fu_681_p1;
+        tmp_38_reg_1140 <= {{imageIn1_addr_fu_685_p2[ap_const_lv32_F : ap_const_lv32_A]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
-        tmp_32_reg_1360 <= grp_fu_475_p2;
+    if (((1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b0 == exitcond_flatten_reg_1198))) begin
+        tmp_41_cast_reg_1239[17 : 0] <= tmp_41_cast_fu_927_p1[17 : 0];
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b0 == exitcond_fu_618_p2))) begin
-        tmp_37_reg_1110 <= tmp_37_fu_634_p1;
-        tmp_9_reg_1115 <= {{imageIn0_addr_fu_638_p2[ap_const_lv32_F : ap_const_lv32_A]}};
+    if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b0 == exitcond2_fu_711_p2))) begin
+        tmp_41_reg_1159 <= tmp_41_fu_727_p1;
+        tmp_42_reg_1164 <= {{imageIn2_addr_fu_731_p2[ap_const_lv32_F : ap_const_lv32_A]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp1_stage0) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b0 == exitcond1_fu_664_p2))) begin
-        tmp_40_reg_1134 <= tmp_40_fu_680_p1;
-        tmp_41_reg_1139 <= {{imageIn1_addr_fu_684_p2[ap_const_lv32_F : ap_const_lv32_A]}};
+    if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b0 == exitcond3_fu_757_p2))) begin
+        tmp_45_reg_1183 <= tmp_45_fu_773_p1;
+        tmp_46_reg_1188 <= {{imageIn3_addr_fu_777_p2[ap_const_lv32_F : ap_const_lv32_A]}};
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        tmp_44_cast_reg_1238[17 : 0] <= tmp_44_cast_fu_926_p1[17 : 0];
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp2_stage0) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b0 == exitcond2_fu_710_p2))) begin
-        tmp_44_reg_1158 <= tmp_44_fu_726_p1;
-        tmp_45_reg_1163 <= {{imageIn2_addr_fu_730_p2[ap_const_lv32_F : ap_const_lv32_A]}};
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp3_stage0) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b0 == exitcond3_fu_756_p2))) begin
-        tmp_48_reg_1182 <= tmp_48_fu_772_p1;
-        tmp_49_reg_1187 <= {{imageIn3_addr_fu_776_p2[ap_const_lv32_F : ap_const_lv32_A]}};
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_fu_802_p2))) begin
-        tmp_5_mid2_v_v_reg_1212 <= tmp_5_mid2_v_v_fu_836_p3;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & (1'b0 == exitcond_flatten_fu_803_p2))) begin
+        tmp_5_mid2_v_v_reg_1213 <= tmp_5_mid2_v_v_fu_837_p3;
     end
 end
 
@@ -2490,7 +2437,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)))) begin
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & ~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)))) begin
         IMAGE_IN0_RREADY = 1'b1;
     end else begin
         IMAGE_IN0_RREADY = 1'b0;
@@ -2506,7 +2453,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0))) begin
+    if (((1'b1 == ap_CS_fsm_pp0_stage0) & (1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0))) begin
         IMAGE_IN0_blk_n_R = m_axi_IMAGE_IN0_RVALID;
     end else begin
         IMAGE_IN0_blk_n_R = 1'b1;
@@ -2522,7 +2469,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)))) begin
+    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & ~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)))) begin
         IMAGE_IN1_RREADY = 1'b1;
     end else begin
         IMAGE_IN1_RREADY = 1'b0;
@@ -2538,7 +2485,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125))) begin
+    if (((1'b1 == ap_CS_fsm_pp1_stage0) & (1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126))) begin
         IMAGE_IN1_blk_n_R = m_axi_IMAGE_IN1_RVALID;
     end else begin
         IMAGE_IN1_blk_n_R = 1'b1;
@@ -2554,7 +2501,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp2_stage0) & (1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)))) begin
+    if (((1'b1 == ap_CS_fsm_pp2_stage0) & (1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & ~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)))) begin
         IMAGE_IN2_RREADY = 1'b1;
     end else begin
         IMAGE_IN2_RREADY = 1'b0;
@@ -2570,7 +2517,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp2_stage0) & (1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149))) begin
+    if (((1'b1 == ap_CS_fsm_pp2_stage0) & (1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150))) begin
         IMAGE_IN2_blk_n_R = m_axi_IMAGE_IN2_RVALID;
     end else begin
         IMAGE_IN2_blk_n_R = 1'b1;
@@ -2586,7 +2533,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp3_stage0) & (1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)))) begin
+    if (((1'b1 == ap_CS_fsm_pp3_stage0) & (1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & ~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)))) begin
         IMAGE_IN3_RREADY = 1'b1;
     end else begin
         IMAGE_IN3_RREADY = 1'b0;
@@ -2602,7 +2549,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp3_stage0) & (1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173))) begin
+    if (((1'b1 == ap_CS_fsm_pp3_stage0) & (1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174))) begin
         IMAGE_IN3_blk_n_R = m_axi_IMAGE_IN3_RVALID;
     end else begin
         IMAGE_IN3_blk_n_R = 1'b1;
@@ -2610,15 +2557,15 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY))) begin
-        if (((1'b1 == ap_enable_reg_pp4_iter5) & (1'b1 == ap_CS_fsm_pp4_stage0))) begin
-            IMAGE_OUT_AWADDR = imageOut10_sum3_cast_fu_1017_p1;
-        end else if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage11))) begin
-            IMAGE_OUT_AWADDR = imageOut10_sum2_cast_fu_993_p1;
-        end else if ((ap_condition_1465 == 1'b1)) begin
-            IMAGE_OUT_AWADDR = imageOut10_sum1_cast_fu_975_p1;
-        end else if (((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4))) begin
-            IMAGE_OUT_AWADDR = imageOut10_sum_cast_fu_951_p1;
+    if ((1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) begin
+        if ((ap_condition_446 == 1'b1)) begin
+            IMAGE_OUT_AWADDR = imageOut10_sum3_cast_fu_1018_p1;
+        end else if ((ap_condition_429 == 1'b1)) begin
+            IMAGE_OUT_AWADDR = imageOut10_sum2_cast_fu_994_p1;
+        end else if ((ap_condition_1447 == 1'b1)) begin
+            IMAGE_OUT_AWADDR = imageOut10_sum1_cast_fu_976_p1;
+        end else if ((ap_condition_385 == 1'b1)) begin
+            IMAGE_OUT_AWADDR = imageOut10_sum_cast_fu_952_p1;
         end else begin
             IMAGE_OUT_AWADDR = 'bx;
         end
@@ -2628,7 +2575,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage11) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)))) begin
+    if ((((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage8) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_AWREADY)))) begin
         IMAGE_OUT_AWVALID = 1'b1;
     end else begin
         IMAGE_OUT_AWVALID = 1'b0;
@@ -2636,7 +2583,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))))) begin
+    if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)))))) begin
         IMAGE_OUT_BREADY = 1'b1;
     end else begin
         IMAGE_OUT_BREADY = 1'b0;
@@ -2644,19 +2591,19 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY))) begin
-        IMAGE_OUT_WDATA = pixelOut3_reg_1395;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) begin
-        IMAGE_OUT_WDATA = pixelOut2_reg_1385;
-    end else if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage2) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))))) begin
-        IMAGE_OUT_WDATA = reg_491;
+    if (((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY))) begin
+        IMAGE_OUT_WDATA = pixelOut3_reg_1366;
+    end else if (((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY))) begin
+        IMAGE_OUT_WDATA = pixelOut2_reg_1361;
+    end else if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) begin
+        IMAGE_OUT_WDATA = reg_497;
     end else begin
         IMAGE_OUT_WDATA = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage2) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)))) begin
+    if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)) | ((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_reg_ioackin_IMAGE_OUT_WREADY)))) begin
         IMAGE_OUT_WVALID = 1'b1;
     end else begin
         IMAGE_OUT_WVALID = 1'b0;
@@ -2664,7 +2611,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage6)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage11)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b1 == ap_CS_fsm_pp4_stage0)))) begin
+    if ((((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage8)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage0)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2)))) begin
         IMAGE_OUT_blk_n_AW = m_axi_IMAGE_OUT_AWREADY;
     end else begin
         IMAGE_OUT_blk_n_AW = 1'b1;
@@ -2672,7 +2619,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12)) | ((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197)) | ((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197)))) begin
+    if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage6)) | ((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198)))) begin
         IMAGE_OUT_blk_n_B = m_axi_IMAGE_OUT_BVALID;
     end else begin
         IMAGE_OUT_blk_n_B = 1'b1;
@@ -2680,7 +2627,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage2)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage7)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage12)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197)))) begin
+    if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage4)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage9)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198)) | ((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198)))) begin
         IMAGE_OUT_blk_n_W = m_axi_IMAGE_OUT_WREADY;
     end else begin
         IMAGE_OUT_blk_n_W = 1'b1;
@@ -2688,7 +2635,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state98)) begin
+    if ((1'b1 == ap_CS_fsm_state87)) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -2704,7 +2651,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((1'b1 == ap_CS_fsm_state98)) begin
+    if ((1'b1 == ap_CS_fsm_state87)) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -2760,15 +2707,15 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        cols_phi_fu_462_p4 = cols_1_reg_1275;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        cols_phi_fu_462_p4 = cols_1_reg_1306;
     end else begin
         cols_phi_fu_462_p4 = cols_reg_458;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | (1'b1 == ap_CS_fsm_pp4_stage3) | ((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | (1'b1 == ap_CS_fsm_pp4_stage5) | ((1'b1 == ap_CS_fsm_pp4_stage6) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))))) begin
+    if (((1'b1 == ap_CS_fsm_pp4_stage5) | ((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) begin
         grp_fu_469_ce = 1'b1;
     end else begin
         grp_fu_469_ce = 1'b0;
@@ -2776,11 +2723,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage4))) begin
-        grp_fu_469_p0 = tmp_30_reg_1380;
-    end else if ((((1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage3)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage5)))) begin
-        grp_fu_469_p0 = reg_496;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage0))) begin
+    if ((((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage5)))) begin
+        grp_fu_469_p0 = reg_491;
+    end else if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage4)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage2)))) begin
         grp_fu_469_p0 = reg_485;
     end else begin
         grp_fu_469_p0 = 'bx;
@@ -2788,21 +2733,25 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter2))) begin
-        grp_fu_472_p0 = ap_pipeline_reg_pp4_iter2_pixelIn3_reg_1300;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
-        grp_fu_472_p0 = pixelIn2_reg_1295;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
-        grp_fu_472_p0 = pixelIn1_reg_1260;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter0) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        grp_fu_472_p0 = pixelIn0_reg_1255;
+    if ((1'b1 == ap_enable_reg_pp4_iter0)) begin
+        if ((1'b1 == ap_CS_fsm_pp4_stage6)) begin
+            grp_fu_472_p0 = pixelIn3_reg_1286;
+        end else if ((1'b1 == ap_CS_fsm_pp4_stage5)) begin
+            grp_fu_472_p0 = pixelIn0_reg_1281;
+        end else if ((1'b1 == ap_CS_fsm_pp4_stage4)) begin
+            grp_fu_472_p0 = pixelIn2_reg_1271;
+        end else if ((1'b1 == ap_CS_fsm_pp4_stage3)) begin
+            grp_fu_472_p0 = pixelIn1_reg_1256;
+        end else begin
+            grp_fu_472_p0 = 'bx;
+        end
     end else begin
         grp_fu_472_p0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | (1'b1 == ap_CS_fsm_pp4_stage3) | ((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | (1'b1 == ap_CS_fsm_pp4_stage5) | (1'b1 == ap_CS_fsm_pp4_stage10) | (1'b1 == ap_CS_fsm_pp4_stage8) | (1'b1 == ap_CS_fsm_pp4_stage9) | ((1'b1 == ap_CS_fsm_pp4_stage6) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) | ((1'b1 == ap_CS_fsm_pp4_stage11) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage7) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))))) begin
+    if (((1'b1 == ap_CS_fsm_pp4_stage5) | ((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | (1'b1 == ap_CS_fsm_pp4_stage12) | (1'b1 == ap_CS_fsm_pp4_stage10) | (1'b1 == ap_CS_fsm_pp4_stage7) | ((1'b1 == ap_CS_fsm_pp4_stage8) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)))) | (1'b1 == ap_CS_fsm_pp4_stage11) | ((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage9) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))))) begin
         grp_fu_475_ce = 1'b1;
     end else begin
         grp_fu_475_ce = 1'b0;
@@ -2810,9 +2759,9 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage8)) | ((1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage9)) | ((1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & (1'b1 == ap_CS_fsm_pp4_stage3)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197)))) begin
+    if ((((1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage7)) | ((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198)) | ((1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage11)) | ((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198)) | ((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) begin
         grp_fu_475_opcode = ap_const_lv2_1;
-    end else if ((((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197)) | ((1'b1 == ap_CS_fsm_pp4_stage11) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197)) | ((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter2)) | ((1'b1 == ap_CS_fsm_pp4_stage7) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage10) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1197)))) begin
+    end else if ((((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage10)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == ap_pipeline_reg_pp4_iter1_exitcond_flatten_reg_1198)) | ((1'b1 == ap_CS_fsm_pp4_stage9) & (1'b1 == ap_enable_reg_pp4_iter2) & (1'b0 == ap_pipeline_reg_pp4_iter2_exitcond_flatten_reg_1198) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) begin
         grp_fu_475_opcode = ap_const_lv2_0;
     end else begin
         grp_fu_475_opcode = 'bx;
@@ -2820,39 +2769,39 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage10) & (1'b1 == ap_enable_reg_pp4_iter2))) begin
-        grp_fu_475_p0 = tmp_31_reg_1340;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter2) & (1'b1 == ap_CS_fsm_pp4_stage9))) begin
-        grp_fu_475_p0 = tmp_28_reg_1335;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter2) & (1'b1 == ap_CS_fsm_pp4_stage8))) begin
-        grp_fu_475_p0 = tmp_24_reg_1330;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage7) & (1'b1 == ap_enable_reg_pp4_iter2))) begin
-        grp_fu_475_p0 = tmp_20_reg_1320;
-    end else if ((((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter2)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter2)))) begin
-        grp_fu_475_p0 = tmp_27_reg_1315;
-    end else if ((((1'b1 == ap_CS_fsm_pp4_stage11) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter1)))) begin
-        grp_fu_475_p0 = tmp_18_reg_1310;
-    end else if ((((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage3)) | ((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter1)))) begin
-        grp_fu_475_p0 = tmp_15_reg_1280;
+    if (((1'b1 == ap_CS_fsm_pp4_stage9) & (1'b1 == ap_enable_reg_pp4_iter2))) begin
+        grp_fu_475_p0 = tmp_29_reg_1341;
+    end else if (((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter2))) begin
+        grp_fu_475_p0 = tmp_27_reg_1336;
+    end else if (((1'b1 == ap_enable_reg_pp4_iter2) & (1'b1 == ap_CS_fsm_pp4_stage7))) begin
+        grp_fu_475_p0 = reg_491;
+    end else if (((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter2))) begin
+        grp_fu_475_p0 = reg_485;
+    end else if ((((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter2)))) begin
+        grp_fu_475_p0 = tmp_26_reg_1331;
+    end else if ((((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage10)) | ((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage11)))) begin
+        grp_fu_475_p0 = tmp_17_reg_1326;
+    end else if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter1)))) begin
+        grp_fu_475_p0 = tmp_14_reg_1296;
     end else begin
         grp_fu_475_p0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage7) & (1'b1 == ap_enable_reg_pp4_iter2)) | ((1'b1 == ap_enable_reg_pp4_iter2) & (1'b1 == ap_CS_fsm_pp4_stage8)) | ((1'b1 == ap_enable_reg_pp4_iter2) & (1'b1 == ap_CS_fsm_pp4_stage9)) | ((1'b1 == ap_CS_fsm_pp4_stage10) & (1'b1 == ap_enable_reg_pp4_iter2)))) begin
-        grp_fu_475_p1 = tmp_21_reg_1325;
-    end else if ((((1'b1 == ap_CS_fsm_pp4_stage11) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter2)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter2)))) begin
-        grp_fu_475_p1 = tmp_19_reg_1305;
-    end else if ((((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage3)) | ((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter1)))) begin
-        grp_fu_475_p1 = reg_485;
+    if ((((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter2)) | ((1'b1 == ap_enable_reg_pp4_iter2) & (1'b1 == ap_CS_fsm_pp4_stage7)) | ((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter2)) | ((1'b1 == ap_CS_fsm_pp4_stage9) & (1'b1 == ap_enable_reg_pp4_iter2)))) begin
+        grp_fu_475_p1 = ap_pipeline_reg_pp4_iter2_tmp_22_reg_1321;
+    end else if ((((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage10)) | ((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage11)) | ((1'b1 == ap_CS_fsm_pp4_stage12) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter2)))) begin
+        grp_fu_475_p1 = tmp_19_reg_1316;
+    end else if ((((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter1)) | ((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter1)))) begin
+        grp_fu_475_p1 = tmp_16_reg_1311;
     end else begin
         grp_fu_475_p1 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | ((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | (1'b1 == ap_CS_fsm_pp4_stage3) | ((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) | (1'b1 == ap_CS_fsm_pp4_stage5) | (1'b1 == ap_CS_fsm_pp4_stage10) | (1'b1 == ap_CS_fsm_pp4_stage8) | (1'b1 == ap_CS_fsm_pp4_stage9) | ((1'b1 == ap_CS_fsm_pp4_stage6) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)))) | ((1'b1 == ap_CS_fsm_pp4_stage11) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage12) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage7) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))))) begin
+    if (((1'b1 == ap_CS_fsm_pp4_stage5) | ((1'b1 == ap_CS_fsm_pp4_stage0) & ~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) | ((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) | (1'b1 == ap_CS_fsm_pp4_stage12) | (1'b1 == ap_CS_fsm_pp4_stage10) | (1'b1 == ap_CS_fsm_pp4_stage7) | ((1'b1 == ap_CS_fsm_pp4_stage8) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)))) | (1'b1 == ap_CS_fsm_pp4_stage11) | ((1'b1 == ap_CS_fsm_pp4_stage4) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) | ((1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) | ((1'b1 == ap_CS_fsm_pp4_stage9) & ~((1'b1 == ap_enable_reg_pp4_iter3) & (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))))) begin
         grp_fu_479_ce = 1'b1;
     end else begin
         grp_fu_479_ce = 1'b0;
@@ -2860,45 +2809,43 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage8))) begin
-        grp_fu_479_p0 = tmp_32_reg_1360;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage7) & (1'b1 == ap_enable_reg_pp4_iter3))) begin
-        grp_fu_479_p0 = tmp_29_reg_1355;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter3))) begin
-        grp_fu_479_p0 = tmp_25_reg_1350;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        grp_fu_479_p0 = tmp_22_reg_1345;
-    end else if (((1'b1 == ap_enable_reg_pp4_iter0) & (1'b1 == ap_CS_fsm_pp4_stage5))) begin
-        grp_fu_479_p0 = tmp_16_reg_1270;
-    end else if (((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
-        grp_fu_479_p0 = tmp_14_reg_1265;
+    if ((1'b1 == ap_enable_reg_pp4_iter0)) begin
+        if ((1'b1 == ap_CS_fsm_pp4_stage7)) begin
+            grp_fu_479_p0 = tmp_21_reg_1301;
+        end else if ((1'b1 == ap_CS_fsm_pp4_stage5)) begin
+            grp_fu_479_p0 = tmp_18_reg_1291;
+        end else if ((1'b1 == ap_CS_fsm_pp4_stage4)) begin
+            grp_fu_479_p0 = tmp_15_reg_1276;
+        end else begin
+            grp_fu_479_p0 = 'bx;
+        end
     end else begin
         grp_fu_479_p0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage3)) | ((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter3)) | ((1'b1 == ap_CS_fsm_pp4_stage7) & (1'b1 == ap_enable_reg_pp4_iter3)) | ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b1 == ap_CS_fsm_pp4_stage8)))) begin
+    if (((1'b1 == ap_enable_reg_pp4_iter0) & (1'b1 == ap_CS_fsm_pp4_stage7))) begin
+        grp_fu_479_p1 = ap_const_lv64_3FD0000000000000;
+    end else if ((((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter0)) | ((1'b1 == ap_CS_fsm_pp4_stage5) & (1'b1 == ap_enable_reg_pp4_iter0)))) begin
         grp_fu_479_p1 = ap_const_lv64_3FE0000000000000;
-    end else if ((((1'b1 == ap_CS_fsm_pp4_stage4) & (1'b1 == ap_enable_reg_pp4_iter0)) | ((1'b1 == ap_enable_reg_pp4_iter0) & (1'b1 == ap_CS_fsm_pp4_stage5)))) begin
-        grp_fu_479_p1 = ap_const_lv64_4000000000000000;
     end else begin
         grp_fu_479_p1 = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
-        image0_address0 = tmp_44_cast_fu_926_p1;
+    if (((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
+        image0_address0 = tmp_41_cast_reg_1239;
     end else if ((1'b1 == ap_enable_reg_pp0_iter2)) begin
-        image0_address0 = tmp_39_fu_659_p1;
+        image0_address0 = tmp_36_fu_660_p1;
     end else begin
         image0_address0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if (((~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b1 == ap_enable_reg_pp4_iter0)))) begin
+    if ((((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b1 == ap_enable_reg_pp4_iter0)) | (~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2)))) begin
         image0_ce0 = 1'b1;
     end else begin
         image0_ce0 = 1'b0;
@@ -2906,7 +2853,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2) & (1'b0 == ap_pipeline_reg_pp0_iter1_exitcond_reg_1101))) begin
+    if ((~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2) & (1'b0 == ap_pipeline_reg_pp0_iter1_exitcond_reg_1102))) begin
         image0_we0 = 1'b1;
     end else begin
         image0_we0 = 1'b0;
@@ -2914,17 +2861,17 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
-        image1_address0 = tmp_44_cast_reg_1238;
+    if (((1'b1 == ap_CS_fsm_pp4_stage1) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
+        image1_address0 = tmp_41_cast_fu_927_p1;
     end else if ((1'b1 == ap_enable_reg_pp1_iter2)) begin
-        image1_address0 = tmp_43_fu_705_p1;
+        image1_address0 = tmp_40_fu_706_p1;
     end else begin
         image1_address0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) & (1'b1 == ap_enable_reg_pp4_iter0)) | (~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2)))) begin
+    if (((~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2)) | ((1'b1 == ap_CS_fsm_pp4_stage1) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) & (1'b1 == ap_enable_reg_pp4_iter0)))) begin
         image1_ce0 = 1'b1;
     end else begin
         image1_ce0 = 1'b0;
@@ -2932,7 +2879,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2) & (1'b0 == ap_pipeline_reg_pp1_iter1_exitcond1_reg_1125))) begin
+    if ((~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2) & (1'b0 == ap_pipeline_reg_pp1_iter1_exitcond1_reg_1126))) begin
         image1_we0 = 1'b1;
     end else begin
         image1_we0 = 1'b0;
@@ -2940,17 +2887,17 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        image2_address0 = ap_pipeline_reg_pp4_iter1_tmp_44_cast_reg_1238;
+    if (((1'b1 == ap_CS_fsm_pp4_stage2) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
+        image2_address0 = tmp_41_cast_reg_1239;
     end else if ((1'b1 == ap_enable_reg_pp2_iter2)) begin
-        image2_address0 = tmp_47_fu_751_p1;
+        image2_address0 = tmp_44_fu_752_p1;
     end else begin
         image2_address0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage3)) | (~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2)))) begin
+    if ((((1'b1 == ap_CS_fsm_pp4_stage2) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0)) | (~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2)))) begin
         image2_ce0 = 1'b1;
     end else begin
         image2_ce0 = 1'b0;
@@ -2958,7 +2905,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2) & (1'b0 == ap_pipeline_reg_pp2_iter1_exitcond2_reg_1149))) begin
+    if ((~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2) & (1'b0 == ap_pipeline_reg_pp2_iter1_exitcond2_reg_1150))) begin
         image2_we0 = 1'b1;
     end else begin
         image2_we0 = 1'b0;
@@ -2966,17 +2913,17 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage3))) begin
-        image3_address0 = ap_pipeline_reg_pp4_iter1_tmp_44_cast_reg_1238;
+    if (((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter0))) begin
+        image3_address0 = tmp_41_cast_reg_1239;
     end else if ((1'b1 == ap_enable_reg_pp3_iter2)) begin
-        image3_address0 = tmp_51_fu_797_p1;
+        image3_address0 = tmp_48_fu_798_p1;
     end else begin
         image3_address0 = 'bx;
     end
 end
 
 always @ (*) begin
-    if ((((1'b1 == ap_enable_reg_pp4_iter1) & (1'b1 == ap_CS_fsm_pp4_stage3)) | (~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2)))) begin
+    if ((((1'b1 == ap_CS_fsm_pp4_stage3) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) & (1'b1 == ap_enable_reg_pp4_iter0)) | (~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2)))) begin
         image3_ce0 = 1'b1;
     end else begin
         image3_ce0 = 1'b0;
@@ -2984,7 +2931,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2) & (1'b0 == ap_pipeline_reg_pp3_iter1_exitcond3_reg_1173))) begin
+    if ((~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2) & (1'b0 == ap_pipeline_reg_pp3_iter1_exitcond3_reg_1174))) begin
         image3_we0 = 1'b1;
     end else begin
         image3_we0 = 1'b0;
@@ -2992,16 +2939,16 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        indvar_flatten_phi_fu_440_p4 = indvar_flatten_next_reg_1201;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        indvar_flatten_phi_fu_440_p4 = indvar_flatten_next_reg_1202;
     end else begin
         indvar_flatten_phi_fu_440_p4 = indvar_flatten_reg_436;
     end
 end
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b1 == ap_enable_reg_pp4_iter1) & (1'b0 == exitcond_flatten_reg_1197))) begin
-        rows1_phi_fu_451_p4 = tmp_5_mid2_v_v_reg_1212;
+    if (((1'b1 == ap_CS_fsm_pp4_stage0) & (1'b0 == exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter1))) begin
+        rows1_phi_fu_451_p4 = tmp_5_mid2_v_v_reg_1213;
     end else begin
         rows1_phi_fu_451_p4 = rows1_reg_447;
     end
@@ -3042,16 +2989,16 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state9;
         end
         ap_ST_fsm_state9 : begin
-            if (~(1'b0 == tmp_fu_594_p2)) begin
+            if (~(1'b0 == tmp_fu_595_p2)) begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage0;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
             end
         end
         ap_ST_fsm_pp0_stage0 : begin
-            if ((~(~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2) & ~(1'b1 == ap_enable_reg_pp0_iter1)) & ~(~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter0) & ~(1'b0 == exitcond_fu_618_p2) & ~(1'b1 == ap_enable_reg_pp0_iter1)))) begin
+            if ((~(~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2) & ~(1'b1 == ap_enable_reg_pp0_iter1)) & ~(~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter0) & ~(1'b0 == exitcond_fu_619_p2) & ~(1'b1 == ap_enable_reg_pp0_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
-            end else if (((~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2) & ~(1'b1 == ap_enable_reg_pp0_iter1)) | (~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1101 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter0) & ~(1'b0 == exitcond_fu_618_p2) & ~(1'b1 == ap_enable_reg_pp0_iter1)))) begin
+            end else if (((~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter2) & ~(1'b1 == ap_enable_reg_pp0_iter1)) | (~((1'b1 == ap_enable_reg_pp0_iter1) & (exitcond_reg_1102 == 1'b0) & (IMAGE_IN0_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp0_iter0) & ~(1'b0 == exitcond_fu_619_p2) & ~(1'b1 == ap_enable_reg_pp0_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_state13;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp0_stage0;
@@ -3061,9 +3008,9 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_pp1_stage0;
         end
         ap_ST_fsm_pp1_stage0 : begin
-            if ((~(~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2) & ~(1'b1 == ap_enable_reg_pp1_iter1)) & ~(~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter0) & ~(1'b0 == exitcond1_fu_664_p2) & ~(1'b1 == ap_enable_reg_pp1_iter1)))) begin
+            if ((~(~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2) & ~(1'b1 == ap_enable_reg_pp1_iter1)) & ~(~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter0) & ~(1'b0 == exitcond1_fu_665_p2) & ~(1'b1 == ap_enable_reg_pp1_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp1_stage0;
-            end else if (((~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2) & ~(1'b1 == ap_enable_reg_pp1_iter1)) | (~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1125) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter0) & ~(1'b0 == exitcond1_fu_664_p2) & ~(1'b1 == ap_enable_reg_pp1_iter1)))) begin
+            end else if (((~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter2) & ~(1'b1 == ap_enable_reg_pp1_iter1)) | (~((1'b1 == ap_enable_reg_pp1_iter1) & (1'b0 == exitcond1_reg_1126) & (IMAGE_IN1_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp1_iter0) & ~(1'b0 == exitcond1_fu_665_p2) & ~(1'b1 == ap_enable_reg_pp1_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_state17;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp1_stage0;
@@ -3073,9 +3020,9 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_pp2_stage0;
         end
         ap_ST_fsm_pp2_stage0 : begin
-            if ((~(~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2) & ~(1'b1 == ap_enable_reg_pp2_iter1)) & ~(~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter0) & ~(1'b0 == exitcond2_fu_710_p2) & ~(1'b1 == ap_enable_reg_pp2_iter1)))) begin
+            if ((~(~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2) & ~(1'b1 == ap_enable_reg_pp2_iter1)) & ~(~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter0) & ~(1'b0 == exitcond2_fu_711_p2) & ~(1'b1 == ap_enable_reg_pp2_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp2_stage0;
-            end else if (((~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2) & ~(1'b1 == ap_enable_reg_pp2_iter1)) | (~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1149) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter0) & ~(1'b0 == exitcond2_fu_710_p2) & ~(1'b1 == ap_enable_reg_pp2_iter1)))) begin
+            end else if (((~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter2) & ~(1'b1 == ap_enable_reg_pp2_iter1)) | (~((1'b1 == ap_enable_reg_pp2_iter1) & (1'b0 == exitcond2_reg_1150) & (IMAGE_IN2_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp2_iter0) & ~(1'b0 == exitcond2_fu_711_p2) & ~(1'b1 == ap_enable_reg_pp2_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_state21;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp2_stage0;
@@ -3085,9 +3032,9 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_pp3_stage0;
         end
         ap_ST_fsm_pp3_stage0 : begin
-            if ((~(~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2) & ~(1'b1 == ap_enable_reg_pp3_iter1)) & ~(~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter0) & ~(1'b0 == exitcond3_fu_756_p2) & ~(1'b1 == ap_enable_reg_pp3_iter1)))) begin
+            if ((~(~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2) & ~(1'b1 == ap_enable_reg_pp3_iter1)) & ~(~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter0) & ~(1'b0 == exitcond3_fu_757_p2) & ~(1'b1 == ap_enable_reg_pp3_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp3_stage0;
-            end else if (((~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2) & ~(1'b1 == ap_enable_reg_pp3_iter1)) | (~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1173) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter0) & ~(1'b0 == exitcond3_fu_756_p2) & ~(1'b1 == ap_enable_reg_pp3_iter1)))) begin
+            end else if (((~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter2) & ~(1'b1 == ap_enable_reg_pp3_iter1)) | (~((1'b1 == ap_enable_reg_pp3_iter1) & (1'b0 == exitcond3_reg_1174) & (IMAGE_IN3_RVALID == 1'b0)) & (1'b1 == ap_enable_reg_pp3_iter0) & ~(1'b0 == exitcond3_fu_757_p2) & ~(1'b1 == ap_enable_reg_pp3_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_state25;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp3_stage0;
@@ -3097,33 +3044,37 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_state9;
         end
         ap_ST_fsm_pp4_stage0 : begin
-            if ((~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & ~(~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & ~(1'b0 == exitcond_flatten_fu_802_p2) & ~(1'b1 == ap_enable_reg_pp4_iter1)))) begin
+            if ((~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & ~(~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & ~(1'b0 == exitcond_flatten_fu_803_p2) & ~(1'b1 == ap_enable_reg_pp4_iter1)))) begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage1;
-            end else if ((~((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & ~(1'b0 == exitcond_flatten_fu_802_p2) & ~(1'b1 == ap_enable_reg_pp4_iter1))) begin
-                ap_NS_fsm = ap_ST_fsm_state98;
+            end else if ((~((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) & (1'b1 == ap_enable_reg_pp4_iter0) & ~(1'b0 == exitcond_flatten_fu_803_p2) & ~(1'b1 == ap_enable_reg_pp4_iter1))) begin
+                ap_NS_fsm = ap_ST_fsm_state87;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage0;
             end
         end
         ap_ST_fsm_pp4_stage1 : begin
-            if (~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) begin
+            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage1;
             end
         end
         ap_ST_fsm_pp4_stage2 : begin
-            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) begin
+            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage3;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage2;
             end
         end
         ap_ST_fsm_pp4_stage3 : begin
-            ap_NS_fsm = ap_ST_fsm_pp4_stage4;
+            if (~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)))) begin
+                ap_NS_fsm = ap_ST_fsm_pp4_stage4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp4_stage3;
+            end
         end
         ap_ST_fsm_pp4_stage4 : begin
-            if (~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) begin
+            if (~((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))) begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage5;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage4;
@@ -3133,45 +3084,41 @@ always @ (*) begin
             ap_NS_fsm = ap_ST_fsm_pp4_stage6;
         end
         ap_ST_fsm_pp4_stage6 : begin
-            if ((~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) & ~((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter5) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) & ~(1'b1 == ap_enable_reg_pp4_iter4)))) begin
+            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage7;
-            end else if (((1'b1 == ap_CS_fsm_pp4_stage6) & (1'b1 == ap_enable_reg_pp4_iter5) & ~(((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0))) & ~(1'b1 == ap_enable_reg_pp4_iter4))) begin
-                ap_NS_fsm = ap_ST_fsm_state98;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_pp4_stage6;
             end
         end
         ap_ST_fsm_pp4_stage7 : begin
-            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
-                ap_NS_fsm = ap_ST_fsm_pp4_stage8;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_pp4_stage7;
-            end
+            ap_NS_fsm = ap_ST_fsm_pp4_stage8;
         end
         ap_ST_fsm_pp4_stage8 : begin
-            ap_NS_fsm = ap_ST_fsm_pp4_stage9;
+            if ((~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) & ~((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter4) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) & ~(1'b1 == ap_enable_reg_pp4_iter3)))) begin
+                ap_NS_fsm = ap_ST_fsm_pp4_stage9;
+            end else if (((1'b1 == ap_CS_fsm_pp4_stage8) & (1'b1 == ap_enable_reg_pp4_iter4) & ~(((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY)) | ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))) & ~(1'b1 == ap_enable_reg_pp4_iter3))) begin
+                ap_NS_fsm = ap_ST_fsm_state87;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp4_stage8;
+            end
         end
         ap_ST_fsm_pp4_stage9 : begin
-            ap_NS_fsm = ap_ST_fsm_pp4_stage10;
+            if (~((1'b1 == ap_enable_reg_pp4_iter3) & (((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY)) | ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0))))) begin
+                ap_NS_fsm = ap_ST_fsm_pp4_stage10;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp4_stage9;
+            end
         end
         ap_ST_fsm_pp4_stage10 : begin
             ap_NS_fsm = ap_ST_fsm_pp4_stage11;
         end
         ap_ST_fsm_pp4_stage11 : begin
-            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_AWREADY))) begin
-                ap_NS_fsm = ap_ST_fsm_pp4_stage12;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_pp4_stage11;
-            end
+            ap_NS_fsm = ap_ST_fsm_pp4_stage12;
         end
         ap_ST_fsm_pp4_stage12 : begin
-            if (~((1'b1 == ap_enable_reg_pp4_iter4) & (((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)) | ((1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1197) & (1'b0 == ap_sig_ioackin_IMAGE_OUT_WREADY))))) begin
-                ap_NS_fsm = ap_ST_fsm_pp4_stage0;
-            end else begin
-                ap_NS_fsm = ap_ST_fsm_pp4_stage12;
-            end
+            ap_NS_fsm = ap_ST_fsm_pp4_stage0;
         end
-        ap_ST_fsm_state98 : begin
+        ap_ST_fsm_state87 : begin
             ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
@@ -3180,13 +3127,13 @@ always @ (*) begin
     endcase
 end
 
-assign IMAGE_IN0_ARADDR = tmp_6_fu_581_p1;
+assign IMAGE_IN0_ARADDR = tmp_6_fu_582_p1;
 
-assign IMAGE_IN1_ARADDR = tmp_5_fu_571_p1;
+assign IMAGE_IN1_ARADDR = tmp_5_fu_572_p1;
 
-assign IMAGE_IN2_ARADDR = tmp_4_fu_561_p1;
+assign IMAGE_IN2_ARADDR = tmp_4_fu_562_p1;
 
-assign IMAGE_IN3_ARADDR = tmp_3_fu_551_p1;
+assign IMAGE_IN3_ARADDR = tmp_3_fu_552_p1;
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[ap_const_lv32_9];
 
@@ -3236,167 +3183,178 @@ assign ap_CS_fsm_state25 = ap_CS_fsm[ap_const_lv32_10];
 
 assign ap_CS_fsm_state8 = ap_CS_fsm[ap_const_lv32_7];
 
+assign ap_CS_fsm_state87 = ap_CS_fsm[ap_const_lv32_1E];
+
 assign ap_CS_fsm_state9 = ap_CS_fsm[ap_const_lv32_8];
 
-assign ap_CS_fsm_state98 = ap_CS_fsm[ap_const_lv32_1E];
-
 always @ (*) begin
-    ap_condition_1465 = ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage6) & ~((1'b1 == ap_enable_reg_pp4_iter5) & (1'b0 == ap_pipeline_reg_pp4_iter5_exitcond_flatten_reg_1197) & (IMAGE_OUT_BVALID == 1'b0)));
+    ap_condition_1447 = ((1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage8) & ~((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (IMAGE_OUT_BVALID == 1'b0)));
 end
 
 always @ (*) begin
-    ap_condition_926 = ~((1'b0 == ap_sig_ioackin_IMAGE_IN0_ARREADY) | (1'b0 == ap_sig_ioackin_IMAGE_IN1_ARREADY) | (1'b0 == ap_sig_ioackin_IMAGE_IN2_ARREADY) | (1'b0 == ap_sig_ioackin_IMAGE_IN3_ARREADY));
+    ap_condition_385 = ((1'b1 == ap_CS_fsm_pp4_stage3) & (1'b1 == ap_enable_reg_pp4_iter3) & (1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198));
+end
+
+always @ (*) begin
+    ap_condition_429 = ((1'b0 == ap_pipeline_reg_pp4_iter3_exitcond_flatten_reg_1198) & (1'b1 == ap_enable_reg_pp4_iter4) & (1'b1 == ap_CS_fsm_pp4_stage0));
+end
+
+always @ (*) begin
+    ap_condition_446 = ((1'b1 == ap_enable_reg_pp4_iter4) & (1'b0 == ap_pipeline_reg_pp4_iter4_exitcond_flatten_reg_1198) & (1'b1 == ap_CS_fsm_pp4_stage2));
+end
+
+always @ (*) begin
+    ap_condition_933 = ~((1'b0 == ap_sig_ioackin_IMAGE_IN0_ARREADY) | (1'b0 == ap_sig_ioackin_IMAGE_IN1_ARREADY) | (1'b0 == ap_sig_ioackin_IMAGE_IN2_ARREADY) | (1'b0 == ap_sig_ioackin_IMAGE_IN3_ARREADY));
 end
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign cols_1_fu_931_p2 = (ap_const_lv12_2 + cols_mid2_reg_1206);
+assign cols_1_fu_932_p2 = (ap_const_lv12_2 + cols_mid2_reg_1207);
 
-assign cols_cast1_fu_876_p1 = cols_mid2_fu_828_p3;
+assign cols_cast1_fu_877_p1 = cols_mid2_fu_829_p3;
 
-assign cols_mid2_fu_828_p3 = ((tmp_8_fu_820_p3[0:0] === 1'b1) ? ap_const_lv12_0 : cols_phi_fu_462_p4);
+assign cols_mid2_fu_829_p3 = ((tmp_8_fu_821_p3[0:0] === 1'b1) ? ap_const_lv12_0 : cols_phi_fu_462_p4);
 
-assign exitcond1_fu_664_p2 = ((indvar1_reg_403 == ap_const_lv11_400) ? 1'b1 : 1'b0);
+assign exitcond1_fu_665_p2 = ((indvar1_reg_403 == ap_const_lv11_400) ? 1'b1 : 1'b0);
 
-assign exitcond2_fu_710_p2 = ((indvar2_reg_414 == ap_const_lv11_400) ? 1'b1 : 1'b0);
+assign exitcond2_fu_711_p2 = ((indvar2_reg_414 == ap_const_lv11_400) ? 1'b1 : 1'b0);
 
-assign exitcond3_fu_756_p2 = ((indvar3_reg_425 == ap_const_lv11_400) ? 1'b1 : 1'b0);
+assign exitcond3_fu_757_p2 = ((indvar3_reg_425 == ap_const_lv11_400) ? 1'b1 : 1'b0);
 
-assign exitcond_flatten_fu_802_p2 = ((indvar_flatten_phi_fu_440_p4 == ap_const_lv17_10000) ? 1'b1 : 1'b0);
+assign exitcond_flatten_fu_803_p2 = ((indvar_flatten_phi_fu_440_p4 == ap_const_lv17_10000) ? 1'b1 : 1'b0);
 
-assign exitcond_fu_618_p2 = ((indvar_reg_392 == ap_const_lv11_400) ? 1'b1 : 1'b0);
+assign exitcond_fu_619_p2 = ((indvar_reg_392 == ap_const_lv11_400) ? 1'b1 : 1'b0);
 
-assign idx1_fu_936_p3 = {{ap_pipeline_reg_pp4_iter3_tmp_34_reg_1227}, {ap_pipeline_reg_pp4_iter3_cols_mid2_reg_1206}};
+assign idx1_fu_937_p3 = {{ap_pipeline_reg_pp4_iter3_tmp_31_reg_1228}, {ap_pipeline_reg_pp4_iter3_cols_mid2_reg_1207}};
 
-assign idx2_fu_900_p2 = (cols_cast1_fu_876_p1 + tmp_7_cast_mid2_fu_872_p1);
+assign idx2_fu_901_p2 = (cols_cast1_fu_877_p1 + tmp_7_cast_mid2_fu_873_p1);
 
-assign imageIn0_addr_fu_638_p2 = (indvar_cast9_fu_630_p1 + tmp_1_reg_1093);
+assign imageIn0_addr_fu_639_p2 = (indvar_cast9_fu_631_p1 + tmp_1_reg_1094);
 
-assign imageIn1_addr_fu_684_p2 = (indvar1_cast7_fu_676_p1 + tmp_1_reg_1093);
+assign imageIn1_addr_fu_685_p2 = (indvar1_cast7_fu_677_p1 + tmp_1_reg_1094);
 
-assign imageIn2_addr_fu_730_p2 = (indvar2_cast5_fu_722_p1 + tmp_1_reg_1093);
+assign imageIn2_addr_fu_731_p2 = (indvar2_cast5_fu_723_p1 + tmp_1_reg_1094);
 
-assign imageIn3_addr_fu_776_p2 = (indvar3_cast3_fu_768_p1 + tmp_1_reg_1093);
+assign imageIn3_addr_fu_777_p2 = (indvar3_cast3_fu_769_p1 + tmp_1_reg_1094);
 
-assign imageOut10_sum1_cast_fu_975_p1 = imageOut10_sum1_reg_1390;
+assign imageOut10_sum1_cast_fu_976_p1 = imageOut10_sum1_reg_1371;
 
-assign imageOut10_sum1_fu_970_p2 = (tmp_2_cast_reg_1076 + tmp_37_cast_fu_966_p1);
+assign imageOut10_sum1_fu_971_p2 = (tmp_2_cast_reg_1077 + tmp_34_cast_fu_967_p1);
 
-assign imageOut10_sum2_cast_fu_993_p1 = imageOut10_sum2_reg_1405;
+assign imageOut10_sum2_cast_fu_994_p1 = imageOut10_sum2_reg_1381;
 
-assign imageOut10_sum2_fu_988_p2 = (tmp_2_cast_reg_1076 + tmp_38_cast_fu_985_p1);
+assign imageOut10_sum2_fu_989_p2 = (tmp_2_cast_reg_1077 + tmp_35_cast_fu_986_p1);
 
-assign imageOut10_sum3_cast_fu_1017_p1 = imageOut10_sum3_reg_1415;
+assign imageOut10_sum3_cast_fu_1018_p1 = imageOut10_sum3_reg_1391;
 
-assign imageOut10_sum3_fu_1012_p2 = (tmp_2_cast_reg_1076 + tmp_40_cast_fu_1008_p1);
+assign imageOut10_sum3_fu_1013_p2 = (tmp_2_cast_reg_1077 + tmp_37_cast_fu_1009_p1);
 
-assign imageOut10_sum_cast_fu_951_p1 = imageOut10_sum_reg_1370;
+assign imageOut10_sum_cast_fu_952_p1 = imageOut10_sum_reg_1351;
 
-assign imageOut10_sum_fu_946_p2 = (tmp_2_cast_reg_1076 + tmp_35_cast_fu_942_p1);
+assign imageOut10_sum_fu_947_p2 = (tmp_2_cast_reg_1077 + tmp_32_cast_fu_943_p1);
 
-assign indvar1_cast7_fu_676_p1 = indvar1_reg_403;
+assign indvar1_cast7_fu_677_p1 = indvar1_reg_403;
 
-assign indvar2_cast5_fu_722_p1 = indvar2_reg_414;
+assign indvar2_cast5_fu_723_p1 = indvar2_reg_414;
 
-assign indvar3_cast3_fu_768_p1 = indvar3_reg_425;
+assign indvar3_cast3_fu_769_p1 = indvar3_reg_425;
 
-assign indvar_cast9_fu_630_p1 = indvar_reg_392;
+assign indvar_cast9_fu_631_p1 = indvar_reg_392;
 
-assign indvar_flatten_next_fu_808_p2 = (indvar_flatten_phi_fu_440_p4 + ap_const_lv17_1);
+assign indvar_flatten_next_fu_809_p2 = (indvar_flatten_phi_fu_440_p4 + ap_const_lv17_1);
 
-assign indvar_next1_fu_670_p2 = (indvar1_reg_403 + ap_const_lv11_1);
+assign indvar_next1_fu_671_p2 = (indvar1_reg_403 + ap_const_lv11_1);
 
-assign indvar_next2_fu_716_p2 = (indvar2_reg_414 + ap_const_lv11_1);
+assign indvar_next2_fu_717_p2 = (indvar2_reg_414 + ap_const_lv11_1);
 
-assign indvar_next3_fu_762_p2 = (indvar3_reg_425 + ap_const_lv11_1);
+assign indvar_next3_fu_763_p2 = (indvar3_reg_425 + ap_const_lv11_1);
 
-assign indvar_next_fu_624_p2 = (indvar_reg_392 + ap_const_lv11_1);
+assign indvar_next_fu_625_p2 = (indvar_reg_392 + ap_const_lv11_1);
 
-assign rows_1_fu_814_p2 = (ap_const_lv8_2 + rows1_phi_fu_451_p4);
+assign rows_1_fu_815_p2 = (ap_const_lv8_2 + rows1_phi_fu_451_p4);
 
-assign rows_2_fu_600_p2 = (rows_reg_381 + ap_const_lv7_1);
+assign rows_2_fu_601_p2 = (rows_reg_381 + ap_const_lv7_1);
 
-assign tmp_10_fu_854_p1 = tmp_5_mid2_v_v_fu_836_p3[6:0];
+assign tmp_10_fu_855_p1 = tmp_5_mid2_v_v_fu_837_p3[6:0];
 
-assign tmp_11_cast_fu_913_p1 = tmp_s_fu_906_p3;
+assign tmp_11_cast_fu_914_p1 = tmp_s_fu_907_p3;
 
-assign tmp_13_fu_920_p2 = (tmp_11_cast_fu_913_p1 + tmp_14_cast_fu_917_p1);
+assign tmp_13_fu_921_p2 = (tmp_11_cast_fu_914_p1 + tmp_14_cast_fu_918_p1);
 
-assign tmp_14_cast_fu_917_p1 = tmp_12_reg_1222;
+assign tmp_14_cast_fu_918_p1 = tmp_12_reg_1223;
 
-assign tmp_1_fu_610_p3 = {{tmp_7_fu_606_p1}, {ap_const_lv10_0}};
+assign tmp_1_fu_611_p3 = {{tmp_7_fu_607_p1}, {ap_const_lv10_0}};
 
-assign tmp_2_cast_fu_591_p1 = tmp_2_reg_1027;
+assign tmp_2_cast_fu_592_p1 = tmp_2_reg_1028;
 
-assign tmp_35_cast_fu_942_p1 = idx1_fu_936_p3;
+assign tmp_32_cast_fu_943_p1 = idx1_fu_937_p3;
 
-assign tmp_35_fu_961_p2 = (idx1_reg_1365 | ap_const_lv18_1);
+assign tmp_32_fu_962_p2 = (idx1_reg_1346 | ap_const_lv18_1);
 
-assign tmp_36_fu_1003_p2 = (ap_pipeline_reg_pp4_iter4_idx2_reg_1232 | ap_const_lv19_1);
+assign tmp_33_fu_1004_p2 = (ap_pipeline_reg_pp4_iter4_idx2_reg_1233 | ap_const_lv19_1);
 
-assign tmp_37_cast_fu_966_p1 = tmp_35_fu_961_p2;
+assign tmp_34_cast_fu_967_p1 = tmp_32_fu_962_p2;
 
-assign tmp_37_fu_634_p1 = indvar_reg_392[9:0];
+assign tmp_34_fu_635_p1 = indvar_reg_392[9:0];
 
-assign tmp_38_cast_fu_985_p1 = ap_pipeline_reg_pp4_iter4_idx2_reg_1232;
+assign tmp_35_cast_fu_986_p1 = ap_pipeline_reg_pp4_iter3_idx2_reg_1233;
 
-assign tmp_38_fu_653_p3 = {{ap_pipeline_reg_pp0_iter1_tmp_9_reg_1115}, {ap_pipeline_reg_pp0_iter1_tmp_37_reg_1110}};
+assign tmp_35_fu_654_p3 = {{ap_pipeline_reg_pp0_iter1_tmp_9_reg_1116}, {ap_pipeline_reg_pp0_iter1_tmp_34_reg_1111}};
 
-assign tmp_39_fu_659_p1 = tmp_38_fu_653_p3;
+assign tmp_36_fu_660_p1 = tmp_35_fu_654_p3;
 
-assign tmp_3_fu_551_p1 = imageIn_reg_1032;
+assign tmp_37_cast_fu_1009_p1 = tmp_33_fu_1004_p2;
 
-assign tmp_40_cast_fu_1008_p1 = tmp_36_fu_1003_p2;
+assign tmp_37_fu_681_p1 = indvar1_reg_403[9:0];
 
-assign tmp_40_fu_680_p1 = indvar1_reg_403[9:0];
+assign tmp_39_fu_700_p3 = {{ap_pipeline_reg_pp1_iter1_tmp_38_reg_1140}, {ap_pipeline_reg_pp1_iter1_tmp_37_reg_1135}};
 
-assign tmp_42_fu_699_p3 = {{ap_pipeline_reg_pp1_iter1_tmp_41_reg_1139}, {ap_pipeline_reg_pp1_iter1_tmp_40_reg_1134}};
+assign tmp_3_fu_552_p1 = imageIn_reg_1033;
 
-assign tmp_43_fu_705_p1 = tmp_42_fu_699_p3;
+assign tmp_40_fu_706_p1 = tmp_39_fu_700_p3;
 
-assign tmp_44_cast_fu_926_p1 = tmp_13_fu_920_p2;
+assign tmp_41_cast_fu_927_p1 = tmp_13_fu_921_p2;
 
-assign tmp_44_fu_726_p1 = indvar2_reg_414[9:0];
+assign tmp_41_fu_727_p1 = indvar2_reg_414[9:0];
 
-assign tmp_46_fu_745_p3 = {{ap_pipeline_reg_pp2_iter1_tmp_45_reg_1163}, {ap_pipeline_reg_pp2_iter1_tmp_44_reg_1158}};
+assign tmp_43_fu_746_p3 = {{ap_pipeline_reg_pp2_iter1_tmp_42_reg_1164}, {ap_pipeline_reg_pp2_iter1_tmp_41_reg_1159}};
 
-assign tmp_47_fu_751_p1 = tmp_46_fu_745_p3;
+assign tmp_44_fu_752_p1 = tmp_43_fu_746_p3;
 
-assign tmp_48_fu_772_p1 = indvar3_reg_425[9:0];
+assign tmp_45_fu_773_p1 = indvar3_reg_425[9:0];
 
-assign tmp_4_fu_561_p1 = imageIn4_reg_1037;
+assign tmp_47_fu_792_p3 = {{ap_pipeline_reg_pp3_iter1_tmp_46_reg_1188}, {ap_pipeline_reg_pp3_iter1_tmp_45_reg_1183}};
 
-assign tmp_50_fu_791_p3 = {{ap_pipeline_reg_pp3_iter1_tmp_49_reg_1187}, {ap_pipeline_reg_pp3_iter1_tmp_48_reg_1182}};
+assign tmp_48_fu_798_p1 = tmp_47_fu_792_p3;
 
-assign tmp_51_fu_797_p1 = tmp_50_fu_791_p3;
+assign tmp_4_fu_562_p1 = imageIn4_reg_1038;
 
-assign tmp_5_fu_571_p1 = imageIn5_reg_1042;
+assign tmp_5_fu_572_p1 = imageIn5_reg_1043;
 
-assign tmp_5_mid2_v_v_fu_836_p3 = ((tmp_8_fu_820_p3[0:0] === 1'b1) ? rows_1_fu_814_p2 : rows1_phi_fu_451_p4);
+assign tmp_5_mid2_v_v_fu_837_p3 = ((tmp_8_fu_821_p3[0:0] === 1'b1) ? rows_1_fu_815_p2 : rows1_phi_fu_451_p4);
 
-assign tmp_6_fu_581_p1 = imageIn6_reg_1047;
+assign tmp_6_fu_582_p1 = imageIn6_reg_1048;
 
-assign tmp_7_cast_mid2_fu_872_p1 = tmp_7_cast_mid2_v_fu_866_p2;
+assign tmp_7_cast_mid2_fu_873_p1 = tmp_7_cast_mid2_v_fu_867_p2;
 
-assign tmp_7_cast_mid2_v_fu_866_p2 = (tmp_7_cast_mid2_v_v_fu_858_p3 | ap_const_lv18_800);
+assign tmp_7_cast_mid2_v_fu_867_p2 = (tmp_7_cast_mid2_v_v_fu_859_p3 | ap_const_lv18_800);
 
-assign tmp_7_cast_mid2_v_v_fu_858_p3 = {{tmp_10_fu_854_p1}, {ap_const_lv11_0}};
+assign tmp_7_cast_mid2_v_v_fu_859_p3 = {{tmp_10_fu_855_p1}, {ap_const_lv11_0}};
 
-assign tmp_7_fu_606_p1 = rows_reg_381[5:0];
+assign tmp_7_fu_607_p1 = rows_reg_381[5:0];
 
-assign tmp_8_fu_820_p3 = cols_phi_fu_462_p4[ap_const_lv32_B];
+assign tmp_8_fu_821_p3 = cols_phi_fu_462_p4[ap_const_lv32_B];
 
-assign tmp_fu_594_p2 = ((rows_reg_381 == ap_const_lv7_40) ? 1'b1 : 1'b0);
+assign tmp_fu_595_p2 = ((rows_reg_381 == ap_const_lv7_40) ? 1'b1 : 1'b0);
 
-assign tmp_s_fu_906_p3 = {{tmp_5_mid2_v_reg_1217}, {ap_const_lv10_0}};
+assign tmp_s_fu_907_p3 = {{tmp_5_mid2_v_reg_1218}, {ap_const_lv10_0}};
 
 always @ (posedge ap_clk) begin
-    tmp_2_cast_reg_1076[30] <= 1'b0;
-    tmp_1_reg_1093[9:0] <= 10'b0000000000;
-    tmp_44_cast_reg_1238[63:18] <= 46'b0000000000000000000000000000000000000000000000;
-    ap_pipeline_reg_pp4_iter1_tmp_44_cast_reg_1238[63:18] <= 46'b0000000000000000000000000000000000000000000000;
+    tmp_2_cast_reg_1077[30] <= 1'b0;
+    tmp_1_reg_1094[9:0] <= 10'b0000000000;
+    tmp_41_cast_reg_1239[63:18] <= 46'b0000000000000000000000000000000000000000000000;
 end
 
 endmodule //idwt
