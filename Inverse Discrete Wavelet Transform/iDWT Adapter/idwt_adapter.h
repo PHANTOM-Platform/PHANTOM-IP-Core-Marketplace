@@ -12,24 +12,20 @@
 #define RECV_BLOCK (SEND_BLOCK*4)
 
 
-// Reserved Memory <0x38000000 0x8000000> = 128MB
-// Mapping to reserved DDR3 mmeory
-static const unsigned int SOURCE_DDR_BUFFER_0 = 0x38000000;
-static const unsigned int SOURCE_DDR_BUFFER_1 = 0x39000000;
-static const unsigned int SOURCE_DDR_BUFFER_2 = 0x3A000000;
-static const unsigned int SOURCE_DDR_BUFFER_3 = 0x3B000000;
-static const unsigned int DEST_DDR_BUFFER = 0x3C000000;
-
-// Mapping address range IN:64MB - OUT:16MB * 4
-static const unsigned int SOURCE_DDR_BUFFER_SIZE = 0x01000000;
-static const unsigned int DEST_DDR_BUFFER_SIZE = ( SOURCE_DDR_BUFFER_SIZE * 4 );
+// Reserved DDR3 Memory <0x38000000 0x8000000> = 128MB
+// Mapping address range IN:16MB * 4 - OUT:64MB
+static const unsigned int total_ddr_size 	 = 0x08000000;
+static const unsigned int source_ddr_buffer_size = 0x01000000;
+static const unsigned int dest_ddr_buffer_size 	 = 0x04000000;
 
 
-// IP Core Name in the Device-tree
-static const char* instanceName = "idwt";
+// IP Core UIO interfaces
+static const char * uio_slave = "phantom_??_slave_xilinx.com,hls,idwt,1.0_0";
+static const char * uio_master = "phantom_??_master_xilinx.com,hls,idwt,1.0_0";
+
 
 
 // Methods
-int idwt(float *inImage0, float *inImage1, float *inImage2, float *inImage3, float *outImage);
+int idwt(float *inImage0, float *inImage1, float *inImage2, float *inImage3, float *outImagezzzz);
 
 
