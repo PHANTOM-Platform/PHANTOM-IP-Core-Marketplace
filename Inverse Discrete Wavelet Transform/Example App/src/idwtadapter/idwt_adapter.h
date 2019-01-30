@@ -20,8 +20,8 @@ static const unsigned int dest_ddr_buffer_size 	 = 0x04000000;
 
 
 // IP Core UIO interfaces
-static const char * uio_slave = "phantom_??_slave_xilinx.com,hls,idwt,1.0_0";
-static const char * uio_master = "phantom_??_master_xilinx.com,hls,idwt,1.0_0";
+static const char * uio_slave  = "phantom??_slave_xilinx.com,hls,idwt,1.0_0";
+static const char * uio_master = "phantom??_master_xilinx.com,hls,idwt,1.0_0";
 
 
 

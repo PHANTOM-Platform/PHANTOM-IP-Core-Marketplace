@@ -221,12 +221,13 @@ int idwt(float *inImage0, float *inImage1, float *inImage2, float *inImage3, flo
 		uint32_t time = 0;
 
 		for ( uint32_t j = 0;  j < 1000000; ++j ) {
-			if(i == 1000000 - 1) {
-				printf("%d - Timeout - IP Core stuck\n", i);
+		
+			if(XIdwt_IsDone(&idwt) == 1) {
+				printf("Block %d Done - %d\n", i, j);
 				break;
 			}
-			if(XIdwt_IsDone(&idwt) == 1) {
-				//printf("%d - isDone - %d\n", i, j);
+			else if(j == 10000000 - 1) {
+				printf("Block %d Timeout - IP Core stuck\n", i);
 				break;
 			}
 

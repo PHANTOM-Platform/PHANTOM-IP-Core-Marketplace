@@ -17,12 +17,6 @@ int main(int argc, char *argv[])
 {
 	printf("\n  --- DWT FPGA DEMO  v1.0.0 ---\n\n");
 
-	/*
-	if(argc < 2) {
-		printf("Usage: ./dwtphantom <ipcore UIO name>\n\n");
-		return -1;
-	}*/
-
 	unsigned int rows = ROWS;
 	unsigned int cols = COLS;
 	unsigned int halfRows = ROWS/2;
